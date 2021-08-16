@@ -46,7 +46,7 @@ public class CartPage extends MenuPage{
 			index++;
 		}
 		click(iconTrashElements.get(index));
-		sleep(3000);
+		sleep(2000);
 	}
 	
 	

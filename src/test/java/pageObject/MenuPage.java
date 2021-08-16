@@ -1,10 +1,14 @@
 	package pageObject;
 
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class MenuPage extends BasePage{
+	@FindBy(css="div.ui.large.stackable.menu div,[href=\"/en_US/taxons/category/dresses\"]")
+	List<WebElement> topBarList;
 	@FindBy(css=".ui.dropdown.item:nth-child(1)")
 	WebElement tshirtDropBtn;
 	@FindBy(css=".ui.dropdown.item:nth-child(2)")
@@ -15,8 +19,6 @@ public class MenuPage extends BasePage{
 	WebElement dressBtn; 	
 	@FindBy(css ="#sylius-cart-total" )
 	WebElement cartTotalElement;
-	@FindBy(css = ".button-search")
-	WebElement serachBtn;
 	@FindBy(css = "#sylius-cart-button")
 	WebElement cartBtn;
 	@FindBy(css = ".cart .ui.fluid.primary.button")
@@ -40,18 +42,17 @@ public class MenuPage extends BasePage{
 	@FindBy(css = "#Logo")
 	WebElement homepageBtn;
 	
+	
 
 	public MenuPage(WebDriver driver) {
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}
-	public void pressSearch() {
-		click(serachBtn);
-	}
-	public void enterCart() {
+
+	public void clickCart() {
 		click(cartBtn);
 	}
-	public void signIn() {
+	public void clicksignIn() {
 		if (isExist(loginBtn)) {
 			click(loginBtn);
 			sleep(2000);
@@ -67,5 +68,28 @@ public class MenuPage extends BasePage{
 		click(homepageBtn);
 	}
 	
+	public void clickregister() {
+		click(registerBtn);
+	}
+	public void editCart() {
+		clickCart();
+		click(editcartBtn);
+	}
+	public void enterCheckout() {
+		clickCart();
+		click(checkOutBtn);
+	}
+	
+	
+	
+	
+	//validate
+	public String checkNumOfItems() {
+		return getT(cartBtn);
+	}
+	
+	public String checkCartTotal() {
+		return getT(cartTotalElement);
+	}
 
 }

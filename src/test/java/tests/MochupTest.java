@@ -9,12 +9,12 @@ import pageObject.AuthenticationPage;
 import pageObject.CartPage;
 import pageObject.MainPage;
 
-public class LoginTest extends BaseTest{
+public class MochupTest extends BaseTest{
 	
 	@Test(priority =1)
 	public void tc_01_loginFailed1() {
 		MenuPage men=new MenuPage(driver);
-		men.signIn();
+		men.clicksignIn();
 		AuthenticationPage lP=new AuthenticationPage(driver);
 		lP.login("shop@example.com", "sylius");
 
@@ -28,11 +28,11 @@ public class LoginTest extends BaseTest{
 		pro.addDress("S","Tall","1");
 		pro.goHomePage();
 		mainP=new MainPage(driver);
-		mainP.chooseProduct("Summer tunic");
+		mainP.chooseProduct("Slim fit");
 		pro=new ProductPage(driver);
 		pro.addDress("S","Tall","1");
 		CartPage cart=new CartPage(driver);
-		cart.deleteitem("Summer tunic");
+		cart.deleteitem("Slim fit");
 	
 		
 	}

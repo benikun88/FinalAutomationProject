@@ -21,7 +21,14 @@ public class BasePage {
 		PageFactory.initElements(driver, this);
 	}
 	
+	public void alertOK() {
+		driver.switchTo().alert().accept();
+	}
 	
+	public String GetURL(){
+        String URL =driver.getCurrentUrl();
+        return URL;
+    }
 	 
 	public void fillText(WebElement el,String text) {
 		highlightElement(el, "yellow");

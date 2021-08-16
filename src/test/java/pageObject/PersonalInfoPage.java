@@ -25,5 +25,9 @@ public class PersonalInfoPage extends MyAcountPage{
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}
+	
+	public void setFirstName(String firstName) {
+		fillText(birthdayElement, firstName);
+	}
 
 }

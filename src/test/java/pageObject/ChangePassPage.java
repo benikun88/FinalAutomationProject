@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class ChnagePassPage extends MyAcountPage{
+public class ChangePassPage extends MyAcountPage{
 	
 	@FindBy(css ="[href=\"/en_US/account/address-book/add\"] .plus " )
 	WebElement addAddresBtn;
@@ -14,7 +14,7 @@ public class ChnagePassPage extends MyAcountPage{
 	List<WebElement> AddresList;
 	
 
-	public ChnagePassPage(WebDriver driver) {
+	public ChangePassPage(WebDriver driver) {
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}

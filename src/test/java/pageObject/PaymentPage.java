@@ -20,5 +20,16 @@ public class PaymentPage extends MenuPage{
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}
+	
+	public void chooseshiping(String payOption) {
+		for (WebElement el : payOptionList) {
+			if(el.getText().equalsIgnoreCase(payOption)) {
+				click(el);
+				sleep(3000);
+				click(nextBtn);
+				break;
+			}
+		}
+	}
 
 }

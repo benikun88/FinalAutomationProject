@@ -1,5 +1,6 @@
 package pageObject;
 
+import org.junit.validator.PublicClassValidator;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,12 +15,22 @@ public class CompleteOrderPage extends BasePage{
 	WebElement placeOrederBtn;
 	@FindBy(css="#sylius-thank-you")
 	WebElement thankYouMsg;
-	@FindBy(css="#payment-method-page")
-	WebElement metofPayBtn;
+	@FindBy(css="#sylius-payment-method")
+	WebElement payMetodElement;
 
 	public CompleteOrderPage(WebDriver driver) {
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}
-
+	
+	public void placeOrder() {
+		click(placeOrederBtn);
+	}
+	
+	
+	
+	//validation 
+	public String checkOrderSuccess() {
+		return getT(thankYouMsg);
+	}
 }
