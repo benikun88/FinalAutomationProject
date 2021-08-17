@@ -17,10 +17,16 @@ public class MyAcountPage extends MenuPage{
 	WebElement orderHistoryTab;
 	@FindBy(css=".item .gift")
 	WebElement loyaltyTab; 
+	@FindBy(css=".sylius-flash-message .content p")
+	WebElement messageElement; 
 
 	public MyAcountPage(WebDriver driver) {
 		super(driver);
 		// TODO Auto-generated constructor stub
+	}
+	
+	public void clickPersonalInfoTab() {
+		click(personalInfoTab);
 	}
 
 }

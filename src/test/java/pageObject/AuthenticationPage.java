@@ -31,12 +31,13 @@ public class AuthenticationPage extends MenuPage{
 		setUser(email);
 		setPass(password);
 		click(singElement);
+		sleep(2000);
 	}
 	public void setUser(String email) {
 		fillText(userElement, email);
 	}
-	public void setPass(String email) {
-		fillText(userElement, email);
+	public void setPass(String password) {
+		fillText(passwordElement, password);
 	}
 
 	public void clickForgotPassBtn() {

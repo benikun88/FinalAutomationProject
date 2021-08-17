@@ -58,6 +58,12 @@ public class MenuPage extends BasePage{
 			sleep(2000);
 		}
 	}	
+	public void clickMyacount() {
+		if (isExist(myAcountBtn)) {
+			click(myAcountBtn);
+			sleep(2000);
+		}
+	}	
 	public void singout() {
 		if (isExist(loginBtn)) {
 			click(logOutBtn);

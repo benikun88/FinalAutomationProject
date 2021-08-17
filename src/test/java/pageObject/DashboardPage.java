@@ -19,4 +19,19 @@ public class DashboardPage extends MyAcountPage{
 		// TODO Auto-generated constructor stub
 	}
 
+	public void clickedit() {
+		click(editAcountBtn);
+	}
+	public void changePass() {
+		click(changpassBtn);
+	}
+	public void vrifyAcount() {
+		click(verificationBtn);
+	}
+	
+	
+	
+	public String getSucessMsg() {
+		return getT(messageElement);
+	}
 }
