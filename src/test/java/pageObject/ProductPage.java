@@ -22,6 +22,8 @@ public class ProductPage extends MenuPage {
 	WebElement addToCartBtn;
 	@FindBy(css = "#sylius-cart-validation-error")
 	WebElement stockErrorElement;
+	@FindBy(css = "sylius-product-name")
+	WebElement productNameElement;
 
 	public ProductPage(WebDriver driver) {
 		super(driver);
@@ -82,6 +84,15 @@ public class ProductPage extends MenuPage {
 
 	public void changeheight(String height) {
 		SelectByValue(hightDressElement, height);
+	}
+	
+	
+	//validation
+	public String getOutOfStockMsg() {
+		return getT(stockErrorElement);
+	}
+	public String getProductName() {
+		return getT(productNameElement);
 	}
 
 }

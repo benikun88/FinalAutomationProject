@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class OrderHistiryPage extends MyAcountPage{
+public class OrderHistoryPage extends MyAcountPage{
 	
 	@FindBy(css ="tbody:nth-child(2) tr.item:nth-child(1) > td:nth-child(1)" )
 	WebElement orderNumElement;
@@ -21,7 +21,7 @@ public class OrderHistiryPage extends MyAcountPage{
 	@FindBy(css ="table.ui.sortable.stackable.very.basic.celled.table tr.item:nth-child(1) td:nth-child(6) div.ui.buttons a.ui.labeled.icon.button:nth-child(1) > i.icon.search" )
 	WebElement showOrderBtn;
 
-	public OrderHistiryPage(WebDriver driver) {
+	public OrderHistoryPage(WebDriver driver) {
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}

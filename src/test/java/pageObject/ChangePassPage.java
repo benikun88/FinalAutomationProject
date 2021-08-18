@@ -16,6 +16,11 @@ public class ChangePassPage extends MyAcountPage{
 	WebElement confirmPassElement;
 	@FindBy(css =".primary.button:nth-child(4)" )
 	WebElement saveChangesBtn;
+	@FindBy(css ="div.ui.segment form.ui.loadable.form div.required.field.error:nth-child(2) > div" )
+	WebElement currentpassalert;
+	@FindBy(css ="div.ui.segment form.ui.loadable.form div.required.field.error:nth-child(3) > div" )
+	WebElement newpassalert;
+	
 	
 
 	public ChangePassPage(WebDriver driver) {
@@ -25,9 +30,22 @@ public class ChangePassPage extends MyAcountPage{
 	
 	public void changePass(String current,String newPass,String Confirm) {
 		fillText(currentpassElement, current);
-		fillText(newPasswordElement, current);
-		fillText(confirmPassElement, current);
+		fillText(newPasswordElement, newPass);
+		fillText(confirmPassElement, Confirm);
 		click(saveChangesBtn);
+	}
+	
+	
+	
+	//validation
+	public String getcurrentPassErr() {
+		return getT(currentpassalert);
+	}
+	public String getnewPassErr() {
+		return getT(newpassalert);
+	}
+	public String getsucceschnageMsg() {
+		return getT(messageElement);
 	}
 
 }

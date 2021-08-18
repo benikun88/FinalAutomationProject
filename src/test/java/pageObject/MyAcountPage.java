@@ -17,7 +17,7 @@ public class MyAcountPage extends MenuPage{
 	WebElement orderHistoryTab;
 	@FindBy(css=".item .gift")
 	WebElement loyaltyTab; 
-	@FindBy(css=".sylius-flash-message .content p")
+	@FindBy(css=".sylius-flash-message p")
 	WebElement messageElement; 
 
 	public MyAcountPage(WebDriver driver) {
@@ -28,5 +28,14 @@ public class MyAcountPage extends MenuPage{
 	public void clickPersonalInfoTab() {
 		click(personalInfoTab);
 	}
+	
+	
+	
+	//validation
+	public String getMsg() {
+		return getT(messageElement);
+	}
+	
+	
 
 }

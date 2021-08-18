@@ -7,7 +7,7 @@ import pageObject.MenuPage;
 import pageObject.MyAcountPage;
 import pageObject.PersonalInfoPage;
 import pageObject.ProductPage;
-import pageObject.AuthenticationPage;
+import pageObject.LoginPage;
 import pageObject.CartPage;
 import pageObject.MainPage;
 
@@ -17,7 +17,7 @@ public class MochupTest extends BaseTest{
 	public void tc_01_loginFailed1() {
 		MenuPage men=new MenuPage(driver);
 		men.clicksignIn();
-		AuthenticationPage lP=new AuthenticationPage(driver);
+		LoginPage lP=new LoginPage(driver);
 		lP.login("fashion@example.com", "sylius");
 		men.clickMyacount();
 		MyAcountPage myAcount=new MyAcountPage(driver);

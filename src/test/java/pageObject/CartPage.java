@@ -30,8 +30,16 @@ public class CartPage extends MenuPage{
 	WebElement applaycouponBtn;
 	@FindBy(css="#sylius-cart-clear")
 	WebElement clearCartBtn;
-	@FindBy(css="div.content > p:nth-child(2)")
-	WebElement successalert;
+//	@FindBy(css="div.content > p:nth-child(2)")
+//	WebElement successalert;
+	@FindBy(css =".positive.message.sylius-flash-message:nth-child(2) div p" )
+	WebElement MsgElement;
+	@FindBy(css =".positive .close " )
+	WebElement closeMsgBtn;
+	@FindBy(css =".sylius-validation-error" )
+	WebElement stockMsg;
+	@FindBy(css ="#sylius-coupon .sylius-validation-error" )
+	WebElement couponMsg;
 
 	public CartPage(WebDriver driver) {
 		super(driver);
@@ -48,6 +56,36 @@ public class CartPage extends MenuPage{
 		click(iconTrashElements.get(index));
 		sleep(2000);
 	}
+	
+	public void clickCheckout() {
+		click(checkOutBtn);
+	}
+	
+	public void changeQuantity(String qcy) {
+		fillText(quantityElement, qcy);
+		click(updateBtnElement);
+	}
+	public void applyCoupon(String cpn) {
+		fillText(couponElement, cpn);
+		click(applaycouponBtn);
+	}
+	
+	
+	
+	//validation
+	public String getOrderTotal() {
+		return getT(TotalPriceShipElements);
+	}
+	public String getcartMsg() {
+		return getT(MsgElement);
+	}
+	public String getstockErr() {
+		return getT(stockMsg);
+	}
+	public String getCpnErr() {
+		return getT(couponMsg);
+	}
+	
 	
 	
 	

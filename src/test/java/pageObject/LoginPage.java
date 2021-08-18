@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class AuthenticationPage extends MenuPage{
+public class LoginPage extends MenuPage{
 	
 	@FindBy(css ="#_username" )
 	WebElement userElement;
@@ -19,11 +19,11 @@ public class AuthenticationPage extends MenuPage{
 	@FindBy(css =".negative.message p" )
 	 WebElement loginEreMsg;
 	@FindBy(css =".positive.message.sylius-flash-message:nth-child(2) div p" )
-	WebElement sucessRegistrationMsg;
+	WebElement posativeMsg;
 	@FindBy(css =".positive .close " )
 	WebElement closeSuccesMsgBtn;
 
-	public AuthenticationPage(WebDriver driver) {
+	public LoginPage(WebDriver driver) {
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}
@@ -54,7 +54,7 @@ public class AuthenticationPage extends MenuPage{
 	}
 	public String getMsg() {
 
-		return getT(sucessRegistrationMsg);
+		return getT(posativeMsg);
 	}
 	
 }
