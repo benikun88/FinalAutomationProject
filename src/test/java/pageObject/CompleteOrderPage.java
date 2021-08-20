@@ -5,31 +5,35 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class CompleteOrderPage extends BasePage{
-	
-	@FindBy(css=".sylius-unit-price")
+public class CompleteOrderPage extends BasePage {
+
+	@FindBy(css = ".sylius-unit-price")
 	WebElement unitPricElement;
-	@FindBy(css="#total")
+	@FindBy(css = "#total")
 	WebElement totalPricElement;
-	@FindBy(css=".labeled.button")
+	@FindBy(css = ".labeled.button")
 	WebElement placeOrederBtn;
-	@FindBy(css="#sylius-thank-you")
+	@FindBy(css = "#sylius-thank-you")
 	WebElement thankYouMsg;
-	@FindBy(css="#sylius-payment-method")
+	@FindBy(css = "#sylius-payment-method")
 	WebElement payMetodElement;
+	@FindBy(css = "#sylius_checkout_complete_notes")
+	WebElement noteFieldElement;
 
 	public CompleteOrderPage(WebDriver driver) {
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	public void placeOrder() {
 		click(placeOrederBtn);
 	}
-	
-	
-	
-	//validation 
+
+	public void enterNotes(String note) {
+		fillText(noteFieldElement, note);
+	}
+
+	// validation
 	public String checkOrderSuccess() {
 		return getT(thankYouMsg);
 	}

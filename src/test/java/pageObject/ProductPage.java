@@ -85,12 +85,12 @@ public class ProductPage extends MenuPage {
 	public void changeheight(String height) {
 		SelectByValue(hightDressElement, height);
 	}
-	
-	
-	//validation
+
+	// validation
 	public String getOutOfStockMsg() {
 		return getT(stockErrorElement);
 	}
+
 	public String getProductName() {
 		return getT(productNameElement);
 	}

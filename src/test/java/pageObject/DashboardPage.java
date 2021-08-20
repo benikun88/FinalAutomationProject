@@ -4,14 +4,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class DashboardPage extends MyAcountPage{
-	
-	
-	@FindBy(css=".pencil")
+public class DashboardPage extends MyAcountPage {
+
+	@FindBy(css = ".pencil")
 	WebElement editAcountBtn;
-	@FindBy(css=".ui.text.menu .lock.icon")
+	@FindBy(css = ".ui.text.menu .lock.icon")
 	WebElement changpassBtn;
-	@FindBy(css="#verification-form .button .checkmark ")
+	@FindBy(css = "#verification-form .button .checkmark ")
 	WebElement verificationBtn;
 
 	public DashboardPage(WebDriver driver) {
@@ -22,15 +21,16 @@ public class DashboardPage extends MyAcountPage{
 	public void clickedit() {
 		click(editAcountBtn);
 	}
+
 	public void changePass() {
 		click(changpassBtn);
 	}
+
 	public void vrifyAcount() {
 		click(verificationBtn);
 	}
-	
-	
-	//validation
+
+	// validation
 	public String getSucessMsg() {
 		return getT(messageElement);
 	}

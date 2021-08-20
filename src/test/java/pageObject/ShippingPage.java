@@ -6,24 +6,25 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class ShippingPage extends MenuPage{
-	
-	
-	@FindBy(css=".ui.segment .required")
+public class ShippingPage extends MenuPage {
+
+	@FindBy(css = ".ui.segment .required")
 	List<WebElement> shipMethod;
-	@FindBy(css="#next-step")
+	@FindBy(css = "#next-step")
 	WebElement nextBtn;
-	@FindBy(css="div.column > a.ui.large.icon.labeled.button")
+	@FindBy(css = "div.column > a.ui.large.icon.labeled.button")
 	WebElement changeAddBtn;
+	@FindBy(css = "div.column > a.ui.large.icon.labeled.button")
+	List<WebElement> shipMethodPrice;
 
 	public ShippingPage(WebDriver driver) {
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}
-	
-	public void chooseshiping(String ship) {
+
+	public void chooseshipping(String ship) {
 		for (WebElement el : shipMethod) {
-			if(el.getText().equalsIgnoreCase(ship)) {
+			if (el.getText().equalsIgnoreCase(ship)) {
 				click(el);
 				sleep(3000);
 				click(nextBtn);
@@ -31,9 +32,23 @@ public class ShippingPage extends MenuPage{
 			}
 		}
 	}
-	
+
+	public void deleteitem(String name) {
+		int index = 0;
+		for (WebElement el : shipMethod) {
+			if (el.getText().equalsIgnoreCase(name)) {
+				break;
+			}
+			index++;
+		}
+		click(shipMethodPrice.get(index));
+		sleep(2000);
+	}
+
 	public void returnToAdress() {
 		click(changeAddBtn);
 	}
+
+	// validation
 
 }

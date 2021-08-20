@@ -36,13 +36,13 @@ public class RegisterPage extends MenuPage {
 		// TODO Auto-generated constructor stub
 	}
 
-	public void register(String name,String lastName,String email,String phone,String pass,String passconfirm) {
+	public void register(String name, String lastName, String email, String phone, String pass, String passconfirm) {
 		setFirstNamElement(firstNamElement, name);
 		setLastNamElement(lastNamElement, lastName);
 		setEmilElement(emilElement, email);
 		setPhoneNumElement(phoneNumElement, phone);
 		setPassElement(passElement, pass);
-		setPassVerificationElement(passVerificationElement, passconfirm); 
+		setPassVerificationElement(passVerificationElement, passconfirm);
 	}
 
 	public void setFirstNamElement(WebElement firstNamElement, String name) {
@@ -68,26 +68,29 @@ public class RegisterPage extends MenuPage {
 	public void setPassVerificationElement(WebElement passVerificationElement, String passconfirm) {
 		fillText(firstNamElement, passconfirm);
 	}
+
 	public void singin() {
 		click(singinBtn);
 	}
-	
-	
-	//validate
+
+	// validate
 	public String getfirstNameAlert() {
 
 		return getT(firstNameAlert);
 	}
+
 	public String getlastNameAlert() {
-		
+
 		return getT(lastNameAlert);
 	}
+
 	public String getemailAlert() {
-		
+
 		return getT(emailAlert);
 	}
+
 	public String getpassAlert() {
-		
+
 		return getT(passAlert);
 	}
 

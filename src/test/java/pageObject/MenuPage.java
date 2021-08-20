@@ -1,4 +1,4 @@
-	package pageObject;
+package pageObject;
 
 import java.util.List;
 
@@ -6,18 +6,18 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class MenuPage extends BasePage{
-	@FindBy(css="div.ui.large.stackable.menu div,[href=\"/en_US/taxons/category/dresses\"]")
+public class MenuPage extends BasePage {
+	@FindBy(css = "div.ui.large.stackable.menu div,[href=\"/en_US/taxons/category/dresses\"]")
 	List<WebElement> topBarList;
-	@FindBy(css=".ui.dropdown.item:nth-child(1)")
+	@FindBy(css = ".ui.dropdown.item:nth-child(1)")
 	WebElement tshirtDropBtn;
-	@FindBy(css=".ui.dropdown.item:nth-child(2)")
+	@FindBy(css = ".ui.dropdown.item:nth-child(2)")
 	WebElement capsDropBtn;
-	@FindBy(css=".ui.dropdown.item:nth-child(3)")
+	@FindBy(css = ".ui.dropdown.item:nth-child(3)")
 	WebElement jeansDropBtn;
-	@FindBy(css=".menu:nth-child(3) > a.item:nth-child(3)")
-	WebElement dressBtn; 	
-	@FindBy(css ="#sylius-cart-total" )
+	@FindBy(css = ".menu:nth-child(3) > a.item:nth-child(3)")
+	WebElement dressBtn;
+	@FindBy(css = "#sylius-cart-total")
 	WebElement cartTotalElement;
 	@FindBy(css = "#sylius-cart-button")
 	WebElement cartBtn;
@@ -25,9 +25,9 @@ public class MenuPage extends BasePage{
 	WebElement checkOutBtn;
 	@FindBy(css = ".text.button:nth-child(2)")
 	WebElement editcartBtn;
-	@FindBy(css ="[href=\"/en_US/login\"]" )
+	@FindBy(css = "[href=\"/en_US/login\"]")
 	WebElement loginBtn;
-	@FindBy(css =".ui.right.stackable.inverted.menu [href=\"/en_US/register\"]" )
+	@FindBy(css = ".ui.right.stackable.inverted.menu [href=\"/en_US/register\"]")
 	WebElement registerBtn;
 	@FindBy(css = ".sylius-logout-button")
 	WebElement logOutBtn;
@@ -41,8 +41,10 @@ public class MenuPage extends BasePage{
 	WebElement contactUsBtn;
 	@FindBy(css = "#Logo")
 	WebElement homepageBtn;
-	
-	
+	@FindBy(css = ".ui.large.flowing.cart.popup.left.center.transition.visible")
+	WebElement cartEmptyMsg;
+	@FindBy(css = ".message.sylius-flash-message:nth-child(2) div p")
+	WebElement generalMsg;
 
 	public MenuPage(WebDriver driver) {
 		super(driver);
@@ -51,50 +53,57 @@ public class MenuPage extends BasePage{
 
 	public void clickCart() {
 		click(cartBtn);
+		sleep(2000);
 	}
+
 	public void clicksignIn() {
 		if (isExist(loginBtn)) {
 			click(loginBtn);
 			sleep(2000);
 		}
-	}	
+	}
+
 	public void clickMyacount() {
 		if (isExist(myAcountBtn)) {
 			click(myAcountBtn);
 			sleep(2000);
 		}
-	}	
+	}
+
 	public void singout() {
 		if (isExist(loginBtn)) {
 			click(logOutBtn);
 		}
 	}
-	
+
 	public void goHomePage() {
 		click(homepageBtn);
 	}
-	
+
 	public void clickregister() {
 		click(registerBtn);
 	}
+
 	public void editCart() {
 		clickCart();
 		click(editcartBtn);
 	}
+
 	public void enterCheckout() {
 		clickCart();
 		click(checkOutBtn);
 	}
-	
-	
-	
-	
-	//validate
+
+	// validate
 	public String checkNumOfItems() {
 		return getT(cartBtn);
 	}
-	
+
 	public String checkCartTotal() {
+		return getT(cartTotalElement);
+	}
+
+	public String getGeneralMsg() {
 		return getT(cartTotalElement);
 	}
 

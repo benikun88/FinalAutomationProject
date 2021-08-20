@@ -21,17 +21,19 @@ public class ForgotPassPage extends LoginPage {
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}
+
 	public void clickReset() {
 		click(resetBtn);
 	}
+
 	public void resetPass(String emiString) {
 		fillText(emailElement, emiString);
-		clickReset();	
+		clickReset();
 	}
 
-	//validate
+	// validate
 	public String getErrorMsg() {
 		return getT(errorMsgElement);
 	}
-	
+
 }

@@ -4,38 +4,41 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class LoginPage extends MenuPage{
-	
-	@FindBy(css ="#_username" )
+public class LoginPage extends MenuPage {
+
+	@FindBy(css = "#_username")
 	WebElement userElement;
-	@FindBy(css ="#_password" )
+	@FindBy(css = "#_password")
 	WebElement passwordElement;
-	@FindBy(css ="[type=\"submit\"]" )
+	@FindBy(css = "[type=\"submit\"]")
 	WebElement singElement;
-	@FindBy(css =".column [href=\"/en_US/register\"]" )
+	@FindBy(css = ".column [href=\"/en_US/register\"]")
 	WebElement createAccountBtnElement;
-	@FindBy(css ="a.ui.right.floated.button:nth-child(6)" )
+	@FindBy(css = "a.ui.right.floated.button:nth-child(6)")
 	WebElement forgotPassBtn;
-	@FindBy(css =".negative.message p" )
-	 WebElement loginEreMsg;
-	@FindBy(css =".positive.message.sylius-flash-message:nth-child(2) div p" )
+	@FindBy(css = ".negative.message p")
+	WebElement loginEreMsg;
+	@FindBy(css = ".positive.message.sylius-flash-message:nth-child(2) div p")
 	WebElement posativeMsg;
-	@FindBy(css =".positive .close " )
+	@FindBy(css = ".positive .close ")
 	WebElement closeSuccesMsgBtn;
 
 	public LoginPage(WebDriver driver) {
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}
-	public void login(String email,String password) {
+
+	public void login(String email, String password) {
 		setUser(email);
 		setPass(password);
 		click(singElement);
 		sleep(2000);
 	}
+
 	public void setUser(String email) {
 		fillText(userElement, email);
 	}
+
 	public void setPass(String password) {
 		fillText(passwordElement, password);
 	}
@@ -43,18 +46,20 @@ public class LoginPage extends MenuPage{
 	public void clickForgotPassBtn() {
 		click(forgotPassBtn);
 	}
+
 	public void clickCreateacountBtn() {
 		click(createAccountBtnElement);
 	}
-	
-	//validation
+
+	// validation
 	public String getError() {
 
 		return getT(loginEreMsg);
 	}
+
 	public String getMsg() {
 
 		return getT(posativeMsg);
 	}
-	
+
 }

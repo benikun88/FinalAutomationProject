@@ -6,19 +6,34 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class ContactUsPage extends MenuPage{
-	
-	
-	@FindBy(css="#sylius_contact_email") 
+public class ContactUsPage extends MenuPage {
+
+	@FindBy(css = "#sylius_contact_email")
 	WebElement emailElement;
-	@FindBy(css="#sylius_contact_message") 
-	WebElement messagElement;
-	@FindBy(css=".submit.button") 
+	@FindBy(css = "#sylius_contact_message")
+	WebElement messagFiledElement;
+	@FindBy(css = ".submit.button")
 	WebElement sendBtn;
+	@FindBy(css = ".error:nth-child(1) > div.ui.red.pointing.label.sylius-validation-error")
+	WebElement emailAlert;
+	@FindBy(css = ".error:nth-child(1) > div.ui.red.pointing.label.sylius-validation-error")
+	WebElement msgAlert;
+	@FindBy(css = ".message.sylius-flash-message:nth-child(2) div p")
+	WebElement generalMsg;
 
 	public ContactUsPage(WebDriver driver) {
 		super(driver);
 		// TODO Auto-generated constructor stub
+	}
+
+	public void sendMsg(String email, String msg) {
+		fillText(emailElement, email);
+		fillText(messagFiledElement, msg);
+	}
+
+	// valdation
+	public String getMsg() {
+		return getT(generalMsg);
 	}
 
 }
