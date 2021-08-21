@@ -39,6 +39,9 @@ public class ProductsPage extends MenuPage {
 		fillText(searchfieldElement, item);
 		click(searchBtn);
 	}
+	public void clearSearch() {
+		click(searchBtn);
+	}
 
 	// validate
 	public String checkItmeName() {

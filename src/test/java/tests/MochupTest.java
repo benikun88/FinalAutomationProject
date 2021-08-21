@@ -40,7 +40,7 @@ public class MochupTest extends BaseTest{
 		pro=new ProductPage(driver);
 		pro.addDress("S","Tall","1");
 		CartPage cart=new CartPage(driver);
-		cart.deleteitem("Slim fit men");
+		cart.removeItem("Slim fit men");
 	
 		
 	}

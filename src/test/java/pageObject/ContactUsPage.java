@@ -29,11 +29,19 @@ public class ContactUsPage extends MenuPage {
 	public void sendMsg(String email, String msg) {
 		fillText(emailElement, email);
 		fillText(messagFiledElement, msg);
+		click(sendBtn);
+		sleep(2000);
 	}
 
 	// valdation
 	public String getMsg() {
 		return getT(generalMsg);
+	}
+	public String getEmailAlert() {
+		return getT(emailAlert);
+	}
+	public String getMsgAlert() {
+		return getT(msgAlert);
 	}
 
 }

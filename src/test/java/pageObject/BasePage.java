@@ -43,6 +43,7 @@ public class BasePage {
 	}
 
 	public String getT(WebElement el) {
+		highlightElement(el, "yellow");
 		return el.getText();
 	}
 

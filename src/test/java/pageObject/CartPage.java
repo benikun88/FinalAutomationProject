@@ -40,13 +40,15 @@ public class CartPage extends MenuPage {
 	WebElement stockMsg;
 	@FindBy(css = "#sylius-coupon .sylius-validation-error")
 	WebElement couponMsg;
+	@FindBy(css = ".info.message:nth-child(3) div.content p")
+	WebElement infoCartMsg;
 
 	public CartPage(WebDriver driver) {
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}
 
-	public void deleteitem(String name) {
+	public void removeItem(String name) {
 		int index = 0;
 		for (WebElement el : productsList) {
 			if (el.getText().equalsIgnoreCase(name)) {
@@ -56,6 +58,9 @@ public class CartPage extends MenuPage {
 		}
 		click(iconTrashElements.get(index));
 		sleep(2000);
+	}
+	public void clearCart() {
+		click(clearCartBtn);
 	}
 
 	public void clickCheckout() {
@@ -93,5 +98,31 @@ public class CartPage extends MenuPage {
 		clickCart();
 		return getT(cartEmptyMsg);
 	}
+	
+	public boolean checkItemExist(String name) {
+		for (WebElement el : productsList) {
+			if (el.getText().equalsIgnoreCase(name)) {
+				return true;
+			}
+			
+		}
+		return false;
+	}
+	
+	public boolean checkItemExistOncartBtn(String name) {
+		clickCart();
+		productsList.remove(productsList.size()-1);
+		for (WebElement el : productsList) {
+			if (el.getText().equalsIgnoreCase(name)) {
+				return true;
+			}
+			
+		}
+		return false;
+	}
+	public String getInfoCart() {
+		return getT(infoCartMsg);
+	}
+		
 
 }

@@ -34,7 +34,7 @@ public class MenuPage extends BasePage {
 	@FindBy(css = ".inverted.menu > a.item:nth-child(2)")
 	WebElement myAcountBtn;
 	@FindBy(css = ".inverted.menu > div.item:nth-child(1)")
-	WebElement usernamElement;
+	WebElement userNamElement;
 	@FindBy(css = ".menu.transition.visible .item")
 	WebElement barlist;
 	@FindBy(css = ".column:nth-child(3) div.ui.inverted.link.list:nth-child(2) > a.item:nth-child(1)")
@@ -45,6 +45,8 @@ public class MenuPage extends BasePage {
 	WebElement cartEmptyMsg;
 	@FindBy(css = ".message.sylius-flash-message:nth-child(2) div p")
 	WebElement generalMsg;
+	@FindBy(css = ".message.sylius-flash-message:nth-child(3) div p")
+	WebElement generalSecondMsg;
 
 	public MenuPage(WebDriver driver) {
 		super(driver);
@@ -70,10 +72,10 @@ public class MenuPage extends BasePage {
 		}
 	}
 
-	public void singout() {
-		if (isExist(loginBtn)) {
+	public void LogOut() {
 			click(logOutBtn);
-		}
+			sleep(2000);
+
 	}
 
 	public void goHomePage() {
@@ -93,6 +95,12 @@ public class MenuPage extends BasePage {
 		clickCart();
 		click(checkOutBtn);
 	}
+	public void clickConnectUs() {
+		click(contactUsBtn);
+
+	}
+	
+	
 
 	// validate
 	public String checkNumOfItems() {
@@ -106,5 +114,16 @@ public class MenuPage extends BasePage {
 	public String getGeneralMsg() {
 		return getT(cartTotalElement);
 	}
+	public String getUserName() {
+		return getT(userNamElement);
+	}
+	public String checkLogOut() {
+		return getT(logOutBtn);
+	}
+	
+//	public void vrifyAcount() {
+//		String str=getT(generalSecondMsg);
+//		System.out.println(str.substring(0,2));
+//	}
 
 }
