@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class adressPage extends BasePage {
+public class AdressPage extends BasePage {
 
 	@FindBy(css = "#sylius_checkout_address_customer_email")
 	WebElement emailElement;
@@ -25,7 +25,7 @@ public class adressPage extends BasePage {
 	@FindBy(css = "#next-step")
 	WebElement nextBtn;
 
-	public adressPage(WebDriver driver) {
+	public AdressPage(WebDriver driver) {
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}
