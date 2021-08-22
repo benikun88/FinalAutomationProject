@@ -66,7 +66,7 @@ public class LoginPage extends MenuPage {
 	}
 	public String getUrlForUserVrify() {
 		String url=getT(verifyMsg);
-		url = url.substring(31,84);
+		url = url.substring(32,84);
 		System.out.println(url);
 		return url;
 	}
