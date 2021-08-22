@@ -29,9 +29,9 @@ public class adressPage extends BasePage {
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}
-	
-	public void fillAdress(String email,String firstName,String lastName,String streetAddress,String country
-			,String city,String postcode,String next) {
+
+	public void fillAdress(String email, String firstName, String lastName, String streetAddress, String country,
+			String city, String postcode, String next) {
 		setEmail(email);
 		setFirstName(firstName);
 		setlastName(lastName);
@@ -40,7 +40,7 @@ public class adressPage extends BasePage {
 		setcity(city);
 		setpostcode(postcode);
 		click(nextBtn);
-		
+
 	}
 
 	public void setEmail(String email) {
@@ -48,33 +48,29 @@ public class adressPage extends BasePage {
 			fillText(emailElement, email);
 		}
 	}
+
 	public void setFirstName(String firstName) {
 		fillText(firsNameElement, firstName);
 	}
+
 	public void setlastName(String lastName) {
 		fillText(lastNameElement, lastName);
 	}
+
 	public void setstreetAddress(String streetAddress) {
 		fillText(streetAddressElement, streetAddress);
 	}
+
 	public void setcountry(String country) {
 		fillText(countryElement, country);
 	}
+
 	public void setcity(String city) {
 		fillText(cityElement, city);
 	}
+
 	public void setpostcode(String postcode) {
 		fillText(postcodeElement, postcode);
 	}
 
-	
 }
-
-
-
-
-
-
-
-
-

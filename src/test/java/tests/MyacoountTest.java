@@ -1,5 +1,5 @@
 package tests;
 
-public class MyacoountTest {
+public class MyAcoountTest {
 
 }
