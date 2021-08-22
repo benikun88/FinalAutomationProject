@@ -1,5 +1,5 @@
 package tests;
 
-public class MyAcoountTest {
+public class MyAcoountTest extends BaseTest {
 
 }
