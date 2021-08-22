@@ -1,5 +1,6 @@
 # FinalAutomationProject
 
+Test automation on e-commerce site - sylius store
 
 Page Object model Test automation framework using Selenium with Java
 TestNg, Maven.
