@@ -2,6 +2,7 @@ package pageObject;
 
 import java.util.List;
 
+import org.apache.commons.math3.util.Precision;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -15,11 +16,11 @@ public class CartPage extends MenuPage {
 	@FindBy(css = "#sylius_cart_items_0_quantity")
 	WebElement quantityElement;
 	@FindBy(css = ".sylius-unit-price")
-	WebElement currentPriceElements;
+	WebElement unitPriceElement;
 	@FindBy(css = ".sylius-total")
-	WebElement TotalPriceElements;
+	WebElement TotalPriceElement;
 	@FindBy(css = "#sylius-cart-grand-total")
-	WebElement TotalPriceShipElements;
+	WebElement TotalPriceShipElement;
 	@FindBy(css = ".fluid.labeled.icon.button:nth-child(2)")
 	WebElement checkoutBtnElement;
 	@FindBy(css = "#sylius-cart-update")
@@ -70,6 +71,7 @@ public class CartPage extends MenuPage {
 	public void changeQuantity(String qcy) {
 		fillText(quantityElement, qcy);
 		click(updateBtnElement);
+		sleep(2000);
 	}
 
 	public void applyCoupon(String cpn) {
@@ -79,7 +81,7 @@ public class CartPage extends MenuPage {
 
 	// validation
 	public String getOrderTotal() {
-		return getT(TotalPriceShipElements);
+		return getT(TotalPriceShipElement);
 	}
 
 	public String getcartMsg() {
@@ -122,6 +124,33 @@ public class CartPage extends MenuPage {
 	}
 	public String getInfoCart() {
 		return getT(infoCartMsg);
+	}
+	public double getUnitPrice() {
+		String unit=getT(unitPriceElement);
+		int size=unit.length();
+		unit=unit.substring(1,size);
+		double unitPrice=Double.parseDouble(unit);
+		unitPrice=Precision.round(unitPrice, 2);
+//		System.out.println(unitPrice);
+		return unitPrice;
+	}
+	public double getTotalprice() {
+		String unit=getT(TotalPriceElement);
+		int size=unit.length();
+		unit=unit.substring(1,size);
+		double unitPrice=Double.parseDouble(unit);
+		unitPrice=Precision.round(unitPrice, 2);
+//		System.out.println(unitPrice);
+		return unitPrice;
+	}
+	public double getTotalpriceShip() {
+		String unit=getT(TotalPriceShipElement);
+		int size=unit.length();
+		unit=unit.substring(1,size);
+		double unitPrice=Double.parseDouble(unit);
+		unitPrice=Precision.round(unitPrice, 2);
+//		System.out.println(unitPrice);
+		return unitPrice;
 	}
 		
 
