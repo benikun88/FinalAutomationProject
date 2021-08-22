@@ -15,7 +15,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePage {
 	WebDriver driver;
-	WebDriverWait wait = new WebDriverWait(driver, 20);
+	//WebDriverWait wait = new WebDriverWait(driver, 20);
 
 	public BasePage(WebDriver driver) {
 		this.driver = driver;
@@ -92,17 +92,17 @@ public class BasePage {
 	}
 
 	public void explicitWaitVisibility(WebElement element) {
-//		WebDriverWait wait = new WebDriverWait(driver, 20);
+		WebDriverWait wait = new WebDriverWait(driver, 20);
 		wait.until(ExpectedConditions.visibilityOf(element));
 	}
 
 	public void explicitWaitClickable(WebElement element) {
-//		WebDriverWait wait = new WebDriverWait(driver, 20);
+		WebDriverWait wait = new WebDriverWait(driver, 20);
 		wait.until(ExpectedConditions.elementToBeClickable(element));
 	}
 
 	public void explicitWaitAllElements(List<WebElement> elements) {
-//		WebDriverWait wait = new WebDriverWait(driver, 20);
+		WebDriverWait wait = new WebDriverWait(driver, 20);
 		wait.until(ExpectedConditions.visibilityOfAllElements(elements));
 	}
 

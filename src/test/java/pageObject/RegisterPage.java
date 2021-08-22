@@ -53,23 +53,23 @@ public class RegisterPage extends MenuPage {
 	}
 
 	public void setLastNamElement(WebElement lastNamElement, String lastName) {
-		fillText(firstNamElement, lastName);
+		fillText(lastNamElement, lastName);
 	}
 
 	public void setEmilElement(WebElement emilElement, String email) {
-		fillText(firstNamElement, email);
+		fillText(emilElement, email);
 	}
 
 	public void setPhoneNumElement(WebElement phoneNumElement, String phone) {
-		fillText(firstNamElement, phone);
+		fillText(phoneNumElement, phone);
 	}
 
 	public void setPassElement(WebElement passElement, String pass) {
-		fillText(firstNamElement, pass);
+		fillText(passElement, pass);
 	}
 
 	public void setPassVerificationElement(WebElement passVerificationElement, String passconfirm) {
-		fillText(firstNamElement, passconfirm);
+		fillText(passVerificationElement, passconfirm);
 	}
 
 	public void singin() {
