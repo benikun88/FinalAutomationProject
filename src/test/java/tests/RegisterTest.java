@@ -1,5 +1,6 @@
 package tests;
 
-public class RegisterTest {
+public class RegisterTest extends BaseTest{
 
+	
 }

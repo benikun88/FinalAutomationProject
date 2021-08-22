@@ -42,7 +42,9 @@ public class PersonalInfoPage extends MyAcountPage {
 	public void setGender(String gender) {
 		SelectByText(genderElement, gender);
 	}
-
+	
+	
+	// Update the user profile fields
 	public void updateProfile(String firstName, String lastName, String email, String gender) {
 		setFirstName(firstName);
 		setLastName(lastName);
@@ -53,6 +55,8 @@ public class PersonalInfoPage extends MyAcountPage {
 	}
 
 	// Validate
+	
+	// Check success update
 	public String getSucessMsg() {
 		return getT(messageElement);
 	}

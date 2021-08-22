@@ -28,13 +28,13 @@ public class CartPage extends MenuPage {
 	@FindBy(css = "#sylius_cart_promotionCoupon")
 	WebElement couponElement;
 	@FindBy(css = "#sylius-save")
-	WebElement applaycouponBtn;
+	WebElement applyCouponBtn;
 	@FindBy(css = "#sylius-cart-clear")
 	WebElement clearCartBtn;
 //	@FindBy(css="div.content > p:nth-child(2)")
 //	WebElement successalert;
 	@FindBy(css = ".positive.message.sylius-flash-message:nth-child(2) div p")
-	WebElement MsgElement;
+	WebElement CartStatusMsg;
 	@FindBy(css = ".positive .close ")
 	WebElement closeMsgBtn;
 	@FindBy(css = ".sylius-validation-error")
@@ -49,6 +49,7 @@ public class CartPage extends MenuPage {
 		// TODO Auto-generated constructor stub
 	}
 
+	// Remove product from cart
 	public void removeItem(String name) {
 		int index = 0;
 		for (WebElement el : productsList) {
@@ -61,47 +62,57 @@ public class CartPage extends MenuPage {
 		sleep(2000);
 	}
 
+	// Clear the cart
 	public void clearCart() {
 		click(clearCartBtn);
 	}
 
+	// Click pass to checkout page
 	public void clickCheckout() {
 		click(checkOutBtn);
 	}
 
+	// change the quantity of a product in the cart
 	public void changeQuantity(String qcy) {
 		fillText(quantityElement, qcy);
 		click(updateBtnElement);
 		sleep(2000);
 	}
 
+	// Apply coupon in the cart
 	public void applyCoupon(String cpn) {
 		fillText(couponElement, cpn);
-		click(applaycouponBtn);
+		click(applyCouponBtn);
 	}
 
-	// validation
+	// Validation
+	// Get total price include shipment,coupon
 	public String getOrderTotal() {
 		return getT(TotalPriceShipElement);
 	}
 
+	// Get cart status in add or remove item
 	public String getcartMsg() {
-		return getT(MsgElement);
+		return getT(CartStatusMsg);
 	}
 
+	// Get out of stock indication
 	public String getstockErr() {
 		return getT(stockMsg);
 	}
 
+	// Get coupon error
 	public String getCpnErr() {
 		return getT(couponMsg);
 	}
 
-	public String checkEmptyCart() {
+	// Check for indication if the top bar cart button indicate empty cart
+	public String checkEmptyCartTopBar() {
 		clickCart();
-		return getT(cartEmptyMsg);
+		return getT(cartEmptyMsgTopBar);
 	}
 
+	// Check if item exist in cart
 	public boolean checkItemExist(String name) {
 		for (WebElement el : productsList) {
 			if (el.getText().equalsIgnoreCase(name)) {
@@ -112,6 +123,7 @@ public class CartPage extends MenuPage {
 		return false;
 	}
 
+	// Check if item exist in cart top bar button
 	public boolean checkItemExistOncartBtn(String name) {
 		clickCart();
 		productsList.remove(productsList.size() - 1);
@@ -124,10 +136,12 @@ public class CartPage extends MenuPage {
 		return false;
 	}
 
+	// Get info if cart is empty
 	public String getInfoCart() {
 		return getT(infoCartMsg);
 	}
 
+	// Get price of one unit of product
 	public double getUnitPrice() {
 		String unit = getT(unitPriceElement);
 		int size = unit.length();
@@ -138,6 +152,7 @@ public class CartPage extends MenuPage {
 		return unitPrice;
 	}
 
+	// Get the total price of product
 	public double getTotalprice() {
 		String unit = getT(TotalPriceElement);
 		int size = unit.length();
@@ -148,6 +163,7 @@ public class CartPage extends MenuPage {
 		return unitPrice;
 	}
 
+	// Get the total price of all product include shipping and discounts
 	public double getTotalpriceShip() {
 		String unit = getT(TotalPriceShipElement);
 		int size = unit.length();

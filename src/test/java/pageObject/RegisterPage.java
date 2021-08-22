@@ -19,7 +19,7 @@ public class RegisterPage extends MenuPage {
 	@FindBy(css = "#sylius_customer_registration_user_plainPassword_second")
 	WebElement passVerificationElement;
 	@FindBy(css = ".large.primary.button")
-	WebElement createacountBtn;
+	WebElement createAcountBtn;
 	@FindBy(css = ".middle.aligned.column .button")
 	WebElement singinBtn;
 	@FindBy(css = "div.required.field.error:nth-child(1) > div")
@@ -36,6 +36,7 @@ public class RegisterPage extends MenuPage {
 		// TODO Auto-generated constructor stub
 	}
 
+	// Register a new account 
 	public void register(String name, String lastName, String email, String phone, String pass, String passconfirm) {
 		setFirstNamElement(firstNamElement, name);
 		setLastNamElement(lastNamElement, lastName);
@@ -43,6 +44,8 @@ public class RegisterPage extends MenuPage {
 		setPhoneNumElement(phoneNumElement, phone);
 		setPassElement(passElement, pass);
 		setPassVerificationElement(passVerificationElement, passconfirm);
+		click(createAcountBtn);
+		sleep(2000);
 	}
 
 	public void setFirstNamElement(WebElement firstNamElement, String name) {

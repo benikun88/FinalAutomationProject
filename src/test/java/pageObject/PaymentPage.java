@@ -20,7 +20,8 @@ public class PaymentPage extends MenuPage {
 		// TODO Auto-generated constructor stub
 	}
 
-	public void chooseshiping(String payOption) {
+	// Choose the pay method
+	public void choosePayMethod(String payOption) {
 		for (WebElement el : payOptionList) {
 			if (el.getText().equalsIgnoreCase(payOption)) {
 				click(el);

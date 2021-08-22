@@ -38,7 +38,7 @@ public class OrderHistoryPage extends MyAcountPage {
 		}
 	}
 
-	// validation
+	// Validation
 
 	public String getStatus() {
 		return getT(statElements);

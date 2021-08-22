@@ -10,23 +10,24 @@ import org.openqa.selenium.support.FindBy;
 public class ProductsPage extends MenuPage {
 
 	@FindBy(css = "#criteria_search_value")
-	WebElement searchfieldElement;
+	WebElement searchFieldElement;
 	@FindBy(css = ".search")
 	WebElement searchBtn;
 	@FindBy(css = ".button .cancel")
 	WebElement canelBtn;
 	@FindBy(css = ".sylius-product-name")
-	List<WebElement> productslist;
+	List<WebElement> productsList;
 	@FindBy(css = ".sylius-product-name")
-	WebElement productname;
+	WebElement productName;
 
 	public ProductsPage(WebDriver driver) {
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}
 
+	// Choose product
 	public void chooseProduct(String name) {
-		for (WebElement el : productslist) {
+		for (WebElement el : productsList) {
 			if (el.getText().equalsIgnoreCase(name)) {
 				click(el);
 				sleep(3000);
@@ -35,16 +36,19 @@ public class ProductsPage extends MenuPage {
 		}
 	}
 
+	// Search product from available items
 	public void search(String item) {
-		fillText(searchfieldElement, item);
+		fillText(searchFieldElement, item);
 		click(searchBtn);
 	}
+
+	// Clear the search results
 	public void clearSearch() {
 		click(searchBtn);
 	}
 
 	// validate
 	public String checkItmeName() {
-		return getT(productname);
+		return getT(productName);
 	}
 }

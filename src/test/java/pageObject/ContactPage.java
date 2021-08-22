@@ -6,9 +6,9 @@ import org.openqa.selenium.support.FindBy;
 
 public class ContactPage extends MenuPage {
 
-	@FindBy(css = "sylius_contact_email")
-	WebElement contactemailElement;
-	@FindBy(css = "sylius_contact_message")
+	@FindBy(css = "#sylius_contact_email")
+	WebElement contactEmailElement;
+	@FindBy(css = "#sylius_contact_message")
 	WebElement contactMsgElement;
 	@FindBy(css = ".submit.button")
 	WebElement sendBtn;
@@ -20,10 +20,16 @@ public class ContactPage extends MenuPage {
 		// TODO Auto-generated constructor stub
 	}
 
+	// Send message to support
 	public void sendMsg(String email, String msg) {
-		fillText(contactemailElement, email);
+		fillText(contactEmailElement, email);
 		fillText(contactMsgElement, msg);
 		click(sendBtn);
 	}
 
+	// Validate
+	// Check the message if success send
+	public String getMsgContactPage() {
+		return getT(alertMsg);
+	}
 }

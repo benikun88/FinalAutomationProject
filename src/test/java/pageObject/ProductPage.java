@@ -30,25 +30,24 @@ public class ProductPage extends MenuPage {
 		// TODO Auto-generated constructor stub
 	}
 
-	public void selectSize(String text) {
-		SelectByValue(hightDressElement, text);
-	}
-
+	// Add dress to cart
 	public void addDress(String size, String height, String Quantity) {
 		changeDressSize(size);
-		changeheight(height);
+		changeHeight(height);
 		changeQuantity(Quantity);
 		addToCart();
 		sleep(2000);
 	}
 
-	public void addjeans(String size, String Quantity) {
+	// Add jeans to cart
+	public void addJeans(String size, String Quantity) {
 		changeJeansSize(size);
 		changeQuantity(Quantity);
 		addToCart();
 		sleep(2000);
 	}
 
+	// Add shirt to cart
 	public void addShirt(String size, String Quantity) {
 		changeShirtSize(size);
 		changeQuantity(Quantity);
@@ -56,6 +55,7 @@ public class ProductPage extends MenuPage {
 		sleep(2000);
 	}
 
+	// Add cap to cart
 	public void addcap(String Quantity) {
 		changeQuantity(Quantity);
 		addToCart();
@@ -64,6 +64,11 @@ public class ProductPage extends MenuPage {
 
 	public void addToCart() {
 		click(addToCartBtn);
+	}
+
+	// Select item size from drop list
+	public void selectSize(String text) {
+		SelectByValue(hightDressElement, text);
 	}
 
 	public void changeDressSize(String size) {
@@ -82,7 +87,7 @@ public class ProductPage extends MenuPage {
 		fillText(quantityElement, Quantity);
 	}
 
-	public void changeheight(String height) {
+	public void changeHeight(String height) {
 		SelectByValue(hightDressElement, height);
 	}
 

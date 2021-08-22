@@ -7,9 +7,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class MenuPage extends BasePage {
-	@FindBy(css = "div.ui.large.stackable.menu div,[href=\"/en_US/taxons/category/dresses\"]")
-	List<WebElement> topBarList;
-	@FindBy(css = ".ui.dropdown.item:nth-child(1)")
+	@FindBy(css = "div.ui.large.stackable.menu:nth-child(3) .ui ,[href=\"/en_US/taxons/category/dresses\"]")
+	List<WebElement> levelOnetopBarList;
+	@FindBy(css = "div.ui.large.stackable.menu:nth-child(3) .ui a")
+	List<WebElement> levelTwotopBarList;
+	@FindBy(css = ".ui.dropdown.item:nth-child(4)")
 	WebElement tshirtDropBtn;
 	@FindBy(css = ".ui.dropdown.item:nth-child(2)")
 	WebElement capsDropBtn;
@@ -40,9 +42,9 @@ public class MenuPage extends BasePage {
 	@FindBy(css = ".column:nth-child(3) div.ui.inverted.link.list:nth-child(2) > a.item:nth-child(1)")
 	WebElement contactUsBtn;
 	@FindBy(css = "#Logo")
-	WebElement homepageBtn;
+	WebElement homePageBtn;
 	@FindBy(css = ".ui.large.flowing.cart.popup.left.center.transition.visible")
-	WebElement cartEmptyMsg;
+	WebElement cartEmptyMsgTopBar;
 	@FindBy(css = ".message.sylius-flash-message:nth-child(2) div p")
 	WebElement generalMsg;
 	@FindBy(css = ".message.sylius-flash-message:nth-child(3) div p")
@@ -53,11 +55,13 @@ public class MenuPage extends BasePage {
 		// TODO Auto-generated constructor stub
 	}
 
+	// Click on the cart button on the header
 	public void clickCart() {
 		click(cartBtn);
 		sleep(2000);
 	}
 
+	// Click Login button
 	public void clicksignIn() {
 		if (isExist(loginBtn)) {
 			click(loginBtn);
@@ -65,6 +69,7 @@ public class MenuPage extends BasePage {
 		}
 	}
 
+	// Click my account
 	public void clickMyacount() {
 		if (isExist(myAcountBtn)) {
 			click(myAcountBtn);
@@ -72,37 +77,43 @@ public class MenuPage extends BasePage {
 		}
 	}
 
+	// Press logout
 	public void LogOut() {
-			click(logOutBtn);
-			sleep(2000);
+		click(logOutBtn);
+		sleep(2000);
 
 	}
 
+	// Go to home page
 	public void goHomePage() {
-		click(homepageBtn);
+		click(homePageBtn);
 	}
 
-	public void clickregister() {
+	// Go to register page
+	public void clickRegister() {
 		click(registerBtn);
 	}
 
+	// Go to cart page
 	public void editCart() {
 		clickCart();
 		click(editcartBtn);
 	}
 
+	// Go to checkout page
 	public void enterCheckout() {
 		clickCart();
 		click(checkOutBtn);
 	}
+
+	// Click on connect us
 	public void clickConnectUs() {
 		click(contactUsBtn);
 
 	}
-	
-	
 
-	// validate
+	// Validate
+	// Check the number of items in the cart
 	public String checkNumOfItems() {
 		return getT(cartBtn);
 	}
@@ -114,13 +125,15 @@ public class MenuPage extends BasePage {
 	public String getGeneralMsg() {
 		return getT(cartTotalElement);
 	}
+
 	public String getUserName() {
 		return getT(userNamElement);
 	}
+
 	public String checkLogOut() {
 		return getT(logOutBtn);
 	}
-	
+
 //	public void vrifyAcount() {
 //		String str=getT(generalSecondMsg);
 //		System.out.println(str.substring(0,2));

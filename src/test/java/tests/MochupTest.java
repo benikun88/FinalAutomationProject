@@ -7,6 +7,7 @@ import pageObject.MenuPage;
 import pageObject.MyAcountPage;
 import pageObject.PersonalInfoPage;
 import pageObject.ProductPage;
+import pageObject.RegisterPage;
 import pageObject.LoginPage;
 import pageObject.CartPage;
 import pageObject.MainPage;
@@ -41,6 +42,23 @@ public class MochupTest extends BaseTest {
 		pro.addDress("S", "Tall", "1");
 		CartPage cart = new CartPage(driver);
 		cart.removeItem("Slim fit men");
+
+	}
+
+	@Test(priority = 2)
+	public void tc_02_register() {
+
+		MainPage main = new MainPage(driver);
+		main.clickRegister();
+		RegisterPage register = new RegisterPage(driver);
+		register.register("beni","kun","b5@gmail.com","05234","12345","12345");
+		LoginPage login=new LoginPage(driver);
+		String url=login.GetURL();
+		driver.get(url);
+		driver.navigate().back();
+		
+		
+		
 
 	}
 }

@@ -30,7 +30,8 @@ public class AdressPage extends BasePage {
 		// TODO Auto-generated constructor stub
 	}
 
-	public void fillAdress(String email, String firstName, String lastName, String streetAddress, String country,
+	// fill address shipment in the order flow
+	public void fillAddress(String email, String firstName, String lastName, String streetAddress, String country,
 			String city, String postcode, String next) {
 		setEmail(email);
 		setFirstName(firstName);
@@ -43,32 +44,39 @@ public class AdressPage extends BasePage {
 
 	}
 
+	// fill Email filed
 	public void setEmail(String email) {
 		if (isExist(emailElement)) {
 			fillText(emailElement, email);
 		}
 	}
 
+	// fill first name filed
 	public void setFirstName(String firstName) {
 		fillText(firsNameElement, firstName);
 	}
 
+	// fill last name filed
 	public void setlastName(String lastName) {
 		fillText(lastNameElement, lastName);
 	}
 
+	// fill street address filed
 	public void setstreetAddress(String streetAddress) {
 		fillText(streetAddressElement, streetAddress);
 	}
 
+	// fill country filed
 	public void setcountry(String country) {
 		fillText(countryElement, country);
 	}
 
+	// fill city filed
 	public void setcity(String city) {
 		fillText(cityElement, city);
 	}
 
+	// fill post code filed
 	public void setpostcode(String postcode) {
 		fillText(postcodeElement, postcode);
 	}

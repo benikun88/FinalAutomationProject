@@ -33,13 +33,18 @@ public class ContactUsPage extends MenuPage {
 		sleep(2000);
 	}
 
-	// valdation
+	// Valdation
+	// Check the message if success send
 	public String getMsg() {
 		return getT(generalMsg);
 	}
+
+	// get error of the email field
 	public String getEmailAlert() {
 		return getT(emailAlert);
 	}
+
+	// get error of the message field
 	public String getMsgAlert() {
 		return getT(msgAlert);
 	}

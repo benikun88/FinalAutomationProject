@@ -9,7 +9,7 @@ public class DashboardPage extends MyAcountPage {
 	@FindBy(css = ".pencil")
 	WebElement editAcountBtn;
 	@FindBy(css = ".ui.text.menu .lock.icon")
-	WebElement changpassBtn;
+	WebElement changePassBtn;
 	@FindBy(css = "#verification-form .button .checkmark ")
 	WebElement verificationBtn;
 
@@ -18,15 +18,18 @@ public class DashboardPage extends MyAcountPage {
 		// TODO Auto-generated constructor stub
 	}
 
+	// Edit the account
 	public void clickedit() {
 		click(editAcountBtn);
 	}
 
+	// Change the password
 	public void changePass() {
-		click(changpassBtn);
+		click(changePassBtn);
 	}
 
-	public void vrifyAcount() {
+	// click on verify account button
+	public void vrifyAccount() {
 		click(verificationBtn);
 	}
 

@@ -22,10 +22,12 @@ public class ForgotPassPage extends LoginPage {
 		// TODO Auto-generated constructor stub
 	}
 
+	// Click Reset password button
 	public void clickReset() {
 		click(resetBtn);
 	}
 
+	// Reset password
 	public void resetPass(String emiString) {
 		fillText(emailElement, emiString);
 		clickReset();

@@ -22,12 +22,15 @@ public class LoginPage extends MenuPage {
 	WebElement posativeMsg;
 	@FindBy(css = ".positive .close ")
 	WebElement closeSuccesMsgBtn;
+	@FindBy(css = ".message.sylius-flash-message:nth-child(3) div p")
+	WebElement verifyMsg;
 
 	public LoginPage(WebDriver driver) {
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}
 
+	// Login to account
 	public void login(String email, String password) {
 		setUser(email);
 		setPass(password);
@@ -51,7 +54,7 @@ public class LoginPage extends MenuPage {
 		click(createAccountBtnElement);
 	}
 
-	// validation
+	// Validation
 	public String getError() {
 
 		return getT(loginEreMsg);
@@ -60,6 +63,12 @@ public class LoginPage extends MenuPage {
 	public String getMsg() {
 
 		return getT(posativeMsg);
+	}
+	public String getUrlForUserVrify() {
+		String url=getT(verifyMsg);
+		url = url.substring(31,84);
+		System.out.println(url);
+		return url;
 	}
 
 }

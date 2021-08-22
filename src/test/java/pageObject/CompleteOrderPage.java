@@ -25,6 +25,7 @@ public class CompleteOrderPage extends BasePage {
 		// TODO Auto-generated constructor stub
 	}
 
+	// Click on place order - last order flow step
 	public void placeOrder() {
 		click(placeOrederBtn);
 	}
