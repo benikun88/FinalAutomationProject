@@ -13,7 +13,6 @@ public class MainPage extends MenuPage {
 
 	public MainPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
 	}
 
 	// Choose a product from the main page 

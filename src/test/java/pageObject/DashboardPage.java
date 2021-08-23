@@ -15,7 +15,6 @@ public class DashboardPage extends MyAcountPage {
 
 	public DashboardPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
 	}
 
 	// Edit the account
@@ -26,6 +25,7 @@ public class DashboardPage extends MyAcountPage {
 	// Change the password
 	public void changePass() {
 		click(changePassBtn);
+		sleep(1000);
 	}
 
 	// click on verify account button

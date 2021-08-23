@@ -17,7 +17,6 @@ public class ContactPage extends MenuPage {
 
 	public ContactPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
 	}
 
 	// Send message to support

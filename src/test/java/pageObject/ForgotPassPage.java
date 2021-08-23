@@ -19,7 +19,6 @@ public class ForgotPassPage extends LoginPage {
 
 	public ForgotPassPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
 	}
 
 	// Click Reset password button

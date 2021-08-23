@@ -21,8 +21,8 @@ public class CartTest extends BaseTest {
 		product.addDress("M", "Regular", "1");
 		CartPage cart = new CartPage(driver);
 		boolean actual = cart.checkItemExist("Sleeveless Dress");
-		boolean expectd = true;
-		assertEquals(actual, expectd);
+//		boolean expectd = true;
+		assertTrue(actual);
 		cart.removeItem("Sleeveless Dress");
 		cart.goHomePage();
 

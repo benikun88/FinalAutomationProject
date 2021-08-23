@@ -22,7 +22,6 @@ public class CompleteOrderPage extends BasePage {
 
 	public CompleteOrderPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
 	}
 
 	// Click on place order - last order flow step

@@ -27,7 +27,6 @@ public class AdressPage extends BasePage {
 
 	public AdressPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
 	}
 
 	// fill address shipment in the order flow

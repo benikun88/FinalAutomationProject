@@ -19,7 +19,6 @@ public class ShippingPage extends MenuPage {
 
 	public ShippingPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
 	}
 
 	public void chooseshipping(String ship) {

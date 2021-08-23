@@ -27,7 +27,6 @@ public class ProductPage extends MenuPage {
 
 	public ProductPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
 	}
 
 	// Add dress to cart

@@ -25,7 +25,6 @@ public class OrderHistoryPage extends MyAcountPage {
 
 	public OrderHistoryPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
 	}
 
 	public void chooseProduct(String name) {

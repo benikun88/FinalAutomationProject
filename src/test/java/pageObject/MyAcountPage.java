@@ -22,7 +22,6 @@ public class MyAcountPage extends MenuPage {
 
 	public MyAcountPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
 	}
 
 	public void clickPersonalInfoTab() {

@@ -17,7 +17,6 @@ public class PaymentPage extends MenuPage {
 
 	public PaymentPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
 	}
 
 	// Choose the pay method

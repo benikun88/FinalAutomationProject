@@ -16,14 +16,13 @@ public class ChangePassPage extends MyAcountPage {
 	WebElement confirmPassElement;
 	@FindBy(css = ".primary.button:nth-child(4)")
 	WebElement saveChangesBtn;
-	@FindBy(css = "div.ui.segment form.ui.loadable.form div.required.field.error:nth-child(2) > div")
+	@FindBy(css = ".field.error:nth-child(2) > div")
 	WebElement currentPassAlert;
-	@FindBy(css = "div.ui.segment form.ui.loadable.form div.required.field.error:nth-child(3) > div")
+	@FindBy(css = ".field.error:nth-child(3) > div")
 	WebElement newPassAlert;
 
 	public ChangePassPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
 	}
 
 	// Change the password

@@ -15,7 +15,6 @@ public class AdressBookPage extends MyAcountPage {
 
 	public AdressBookPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
 	}
 
 }

@@ -33,7 +33,6 @@ public class RegisterPage extends MenuPage {
 
 	public RegisterPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
 	}
 
 	// Register a new account 

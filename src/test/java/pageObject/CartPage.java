@@ -46,7 +46,6 @@ public class CartPage extends MenuPage {
 
 	public CartPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
 	}
 
 	// Remove product from cart

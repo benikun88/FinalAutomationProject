@@ -52,7 +52,6 @@ public class MenuPage extends BasePage {
 
 	public MenuPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
 	}
 
 	// Click on the cart button on the header
@@ -80,7 +79,7 @@ public class MenuPage extends BasePage {
 	// Press logout
 	public void LogOut() {
 		click(logOutBtn);
-		sleep(2000);
+		sleep(2500);
 
 	}
 

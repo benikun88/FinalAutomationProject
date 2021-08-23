@@ -24,7 +24,6 @@ public class PersonalInfoPage extends MyAcountPage {
 
 	public PersonalInfoPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
 	}
 
 	public void setFirstName(String firstName) {

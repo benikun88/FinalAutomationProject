@@ -27,7 +27,6 @@ public class LoginPage extends MenuPage {
 
 	public LoginPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
 	}
 
 	// Login to account
