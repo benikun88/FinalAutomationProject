@@ -14,7 +14,7 @@ public class ChangePassPage extends MyAcountPage {
 	WebElement newPasswordElement;
 	@FindBy(css = "#sylius_user_change_password_newPassword_second")
 	WebElement confirmPassElement;
-	@FindBy(css = ".primary.button:nth-child(4)")
+	@FindBy(css = ".button.ui.large.primary.button")
 	WebElement saveChangesBtn;
 	@FindBy(css = ".field.error:nth-child(2) > div")
 	WebElement currentPassAlert;

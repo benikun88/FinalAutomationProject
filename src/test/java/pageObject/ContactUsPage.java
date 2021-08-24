@@ -16,7 +16,7 @@ public class ContactUsPage extends MenuPage {
 	WebElement sendBtn;
 	@FindBy(css = ".error:nth-child(1) > div.ui.red.pointing.label.sylius-validation-error")
 	WebElement emailAlert;
-	@FindBy(css = ".error:nth-child(1) > div.ui.red.pointing.label.sylius-validation-error")
+	@FindBy(css = "div.ui.red.pointing.label.sylius-validation-error")
 	WebElement msgAlert;
 	@FindBy(css = ".message.sylius-flash-message:nth-child(2) div p")
 	WebElement generalMsg;

@@ -17,7 +17,7 @@ public class MenuPage extends BasePage {
 	WebElement capsDropBtn;
 	@FindBy(css = ".ui.dropdown.item:nth-child(3)")
 	WebElement jeansDropBtn;
-	@FindBy(css = ".menu:nth-child(3) > a.item:nth-child(3)")
+	@FindBy(css = ".stackable.menu:nth-child(3) > a.item:nth-child(2)")
 	WebElement dressBtn;
 	@FindBy(css = "#sylius-cart-total")
 	WebElement cartTotalElement;
@@ -110,6 +110,11 @@ public class MenuPage extends BasePage {
 		click(contactUsBtn);
 
 	}
+	// Click on dress menu
+	public void clickDressCategory() {
+		click(dressBtn);
+		
+	}
 
 	// Validate
 	// Check the number of items in the cart
@@ -122,7 +127,7 @@ public class MenuPage extends BasePage {
 	}
 
 	public String getGeneralMsg() {
-		return getT(cartTotalElement);
+		return getT(generalMsg);
 	}
 
 	public String getUserName() {

@@ -90,19 +90,12 @@ public class LoginTest extends BaseTest {
 		String expectd = "Login";
 		assertEquals(actual, expectd);
 	}
-	
-	
+
 	@DataProvider
-	public Object[][] getData(){
-		Object[][] myData = {
-				{"@example.com", "sylius"},
-				{"gal","123"},
-				{"",""},
-				{"!","==="},
-		};
-		return myData;      
-		
-		
+	public Object[][] getData() {
+		Object[][] myData = { { "@example.com", "sylius" }, { "gal", "123" }, { "", "" }, { "!", "===" }, };
+		return myData;
+
 	}
 
 }

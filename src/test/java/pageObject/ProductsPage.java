@@ -19,6 +19,8 @@ public class ProductsPage extends MenuPage {
 	List<WebElement> productsList;
 	@FindBy(css = ".sylius-product-name")
 	WebElement productName;
+	@FindBy(css = ".info.message .content p")
+	WebElement searchInfo;
 
 	public ProductsPage(WebDriver driver) {
 		super(driver);
@@ -39,6 +41,7 @@ public class ProductsPage extends MenuPage {
 	public void search(String item) {
 		fillText(searchFieldElement, item);
 		click(searchBtn);
+		sleep(2000);
 	}
 
 	// Clear the search results
@@ -49,5 +52,8 @@ public class ProductsPage extends MenuPage {
 	// validate
 	public String checkItmeName() {
 		return getT(productName);
+	}
+	public String getSearchInfo() {
+		return getT(searchInfo);
 	}
 }
