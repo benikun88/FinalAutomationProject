@@ -1,12 +1,15 @@
 package pageObject;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class AdressPage extends BasePage {
+import com.beust.jcommander.internal.Console;
+
+public class AdressPage extends CheckOutPage {
 
 	@FindBy(css = "#sylius_checkout_address_customer_email")
 	WebElement emailElement;
@@ -30,8 +33,20 @@ public class AdressPage extends BasePage {
 	}
 
 	// fill address shipment in the order flow
-	public void fillAddress(String email, String firstName, String lastName, String streetAddress, String country,
-			String city, String postcode, String next) {
+	public void fillAddress(String firstName, String lastName, String streetAddress, String country,
+			String city, String postcode) {
+		setFirstName(firstName);
+		setlastName(lastName);
+		setstreetAddress(streetAddress);
+		setcountry(country);
+		sleep(2000);
+		setcity(city);
+		setpostcode(postcode);
+		click(nextBtn);
+
+	}
+	public void fillAddressNoEmail(String email, String firstName, String lastName, String streetAddress, String country,
+			String city, String postcode) {
 		setEmail(email);
 		setFirstName(firstName);
 		setlastName(lastName);
@@ -40,14 +55,13 @@ public class AdressPage extends BasePage {
 		setcity(city);
 		setpostcode(postcode);
 		click(nextBtn);
-
+		
 	}
 
 	// fill Email filed
 	public void setEmail(String email) {
-		if (isExist(emailElement)) {
+		
 			fillText(emailElement, email);
-		}
 	}
 
 	// fill first name filed
@@ -67,7 +81,7 @@ public class AdressPage extends BasePage {
 
 	// fill country filed
 	public void setcountry(String country) {
-		fillText(countryElement, country);
+		SelectByText(countryElement, country);
 	}
 
 	// fill city filed

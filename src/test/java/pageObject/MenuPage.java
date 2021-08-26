@@ -24,7 +24,7 @@ public class MenuPage extends BasePage {
 	@FindBy(css = "#sylius-cart-button")
 	WebElement cartBtn;
 	@FindBy(css = ".cart .ui.fluid.primary.button")
-	WebElement checkOutBtn;
+	WebElement checkOutBtnTop;
 	@FindBy(css = ".text.button:nth-child(2)")
 	WebElement editcartBtn;
 	@FindBy(css = "[href=\"/en_US/login\"]")
@@ -102,7 +102,7 @@ public class MenuPage extends BasePage {
 	// Go to checkout page
 	public void enterCheckout() {
 		clickCart();
-		click(checkOutBtn);
+		click(checkOutBtnTop);
 	}
 
 	// Click on connect us

@@ -22,7 +22,7 @@ public class CartPage extends MenuPage {
 	@FindBy(css = "#sylius-cart-grand-total")
 	WebElement TotalPriceShipElement;
 	@FindBy(css = ".fluid.labeled.icon.button:nth-child(2)")
-	WebElement checkoutBtnElement;
+	WebElement checkoutBtn;
 	@FindBy(css = "#sylius-cart-update")
 	WebElement updateBtnElement;
 	@FindBy(css = "#sylius_cart_promotionCoupon")
@@ -68,7 +68,7 @@ public class CartPage extends MenuPage {
 
 	// Click pass to checkout page
 	public void clickCheckout() {
-		click(checkOutBtn);
+		click(checkoutBtn);
 	}
 
 	// change the quantity of a product in the cart

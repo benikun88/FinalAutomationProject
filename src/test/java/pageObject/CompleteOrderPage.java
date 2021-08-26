@@ -13,15 +13,20 @@ public class CompleteOrderPage extends BasePage {
 	WebElement totalPricElement;
 	@FindBy(css = ".labeled.button")
 	WebElement placeOrederBtn;
-	@FindBy(css = "#sylius-thank-you")
+	@FindBy(css = "#sylius-thank-you .sub")
 	WebElement thankYouMsg;
 	@FindBy(css = "#sylius-payment-method")
 	WebElement payMetodElement;
 	@FindBy(css = "#sylius_checkout_complete_notes")
 	WebElement noteFieldElement;
+	@FindBy(css = "sylius-show-order-in-account")
+	WebElement viewOrderBtn;
 
 	public CompleteOrderPage(WebDriver driver) {
 		super(driver);
+	}
+	public void vierOrder() {
+		click(viewOrderBtn);
 	}
 
 	// Click on place order - last order flow step
