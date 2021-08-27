@@ -11,6 +11,7 @@ import com.beust.jcommander.internal.Console;
 
 public class AdressPage extends CheckOutPage {
 	
+	
 
 	@FindBy(css = "#sylius_checkout_address_customer_email")
 	WebElement emailElement;
