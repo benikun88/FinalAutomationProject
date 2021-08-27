@@ -15,6 +15,7 @@ import pageObject.MyAcountPage;
 
 public class MyAcountTest extends BaseTest {
 
+	
 	MainPage mainPage;
 	LoginPage loginPage;
 	String username = "b@gmail.com";
