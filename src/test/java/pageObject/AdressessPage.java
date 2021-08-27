@@ -9,10 +9,9 @@ import org.openqa.selenium.support.FindBy;
 
 import com.beust.jcommander.internal.Console;
 
-public class AdressPage extends CheckOutPage {
-	
-	
+public class AdressessPage extends CheckOutPage {
 
+	
 	@FindBy(css = "#sylius_checkout_address_customer_email")
 	WebElement emailElement;
 	@FindBy(css = "#sylius_checkout_address_billingAddress_firstName")
@@ -30,13 +29,13 @@ public class AdressPage extends CheckOutPage {
 	@FindBy(css = "#next-step")
 	WebElement nextBtn;
 
-	public AdressPage(WebDriver driver) {
+	public AdressessPage(WebDriver driver) {
 		super(driver);
 	}
 
 	// fill address shipment in the order flow
-	public void fillAddress(String firstName, String lastName, String streetAddress, String country,
-			String city, String postcode) {
+	public void fillAddress(String firstName, String lastName, String streetAddress, String country, String city,
+			String postcode) {
 		setFirstName(firstName);
 		setlastName(lastName);
 		setstreetAddress(streetAddress);
@@ -47,8 +46,9 @@ public class AdressPage extends CheckOutPage {
 		click(nextBtn);
 
 	}
-	public void fillAddressNoEmail(String email, String firstName, String lastName, String streetAddress, String country,
-			String city, String postcode) {
+
+	public void fillAddressNoEmail(String email, String firstName, String lastName, String streetAddress,
+			String country, String city, String postcode) {
 		setEmail(email);
 		setFirstName(firstName);
 		setlastName(lastName);
@@ -57,13 +57,13 @@ public class AdressPage extends CheckOutPage {
 		setcity(city);
 		setpostcode(postcode);
 		click(nextBtn);
-		
+
 	}
 
 	// fill Email filed
 	public void setEmail(String email) {
-		
-			fillText(emailElement, email);
+
+		fillText(emailElement, email);
 	}
 
 	// fill first name filed

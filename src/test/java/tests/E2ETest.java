@@ -7,7 +7,7 @@ import org.apache.commons.math3.analysis.function.Add;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import pageObject.AdressPage;
+import pageObject.AdressessPage;
 import pageObject.CartPage;
 import pageObject.CompleteOrderPage;
 import pageObject.LoginPage;
@@ -52,7 +52,7 @@ public class E2ETest extends BaseTest {
 		product.addShirt("XL", "1");
 		CartPage cart = new CartPage(driver);
 		cart.clickCheckout();
-		AdressPage addPage=new AdressPage(driver);
+		AdressessPage addPage=new AdressessPage(driver);
 		addPage.fillAddress("John", "Dow", "the street", "United States","New York", "311988");
 		ShippingPage shipMethod=new ShippingPage(driver);
 		shipMethod.chooseshipping("FedEx");
