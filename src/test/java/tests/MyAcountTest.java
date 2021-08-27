@@ -13,7 +13,7 @@ import pageObject.LoginPage;
 import pageObject.MainPage;
 import pageObject.MyAcountPage;
 
-public class MyAcoountTest extends BaseTest {
+public class MyAcountTest extends BaseTest {
 
 	MainPage mainPage;
 	LoginPage loginPage;

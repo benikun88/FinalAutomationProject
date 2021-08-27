@@ -2,6 +2,7 @@ package tests;
 
 import static org.testng.Assert.assertEquals;
 
+import org.apache.tools.ant.taskdefs.Sleep;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
@@ -33,7 +34,7 @@ public class LoginTest extends BaseTest {
 //		LoginPage loginPage = new LoginPage(driver);
 		loginPage.login(user, password);
 		String actual = mainPage.getUserName();
-		String expectd = "Hello Ben Cohen!";
+		String expectd = "Hello Deon Metz!";
 		assertEquals(actual, expectd);
 		mainPage = new MainPage(driver);
 		mainPage.LogOut();
@@ -71,8 +72,9 @@ public class LoginTest extends BaseTest {
 //		LoginPage loginPage = new LoginPage(driver);
 		loginPage.login(user, password);
 		driver.navigate().refresh();
+		loginPage.sleep(2000);
 		String actual = mainPage.getUserName();
-		String expectd = "Hello Ben Cohen!";
+		String expectd = "Hello Deon Metz!";
 		assertEquals(actual, expectd);
 		mainPage = new MainPage(driver);
 		mainPage.LogOut();

@@ -49,7 +49,7 @@ public class E2ETest extends BaseTest {
 		loginPage.login(user, password);
 		mainPage.chooseProduct(product1);		
 		product = new ProductPage(driver);
-		product.addShirt("M", "1");
+		product.addShirt("XL", "1");
 		CartPage cart = new CartPage(driver);
 		cart.clickCheckout();
 		AdressPage addPage=new AdressPage(driver);

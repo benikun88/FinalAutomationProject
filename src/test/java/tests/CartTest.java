@@ -13,12 +13,12 @@ import pageObject.MainPage;
 import pageObject.ProductPage;
 
 public class CartTest extends BaseTest {
-	
+
 	MainPage mainPage;
 	ProductPage product;
-	String product1="Slim fit V-neck men";
-	String product2="Slim fit men";
-	
+	String product1 = "Slim fit V-neck men";
+	String product2 = "Slim fit men";
+
 	@BeforeMethod
 	public void choooseProduct() {
 		mainPage = new MainPage(driver);
@@ -67,7 +67,7 @@ public class CartTest extends BaseTest {
 		mainPage = new MainPage(driver);
 		mainPage.chooseProduct(product2);
 		product = new ProductPage(driver);
-		product.addShirt("S","1");
+		product.addShirt("M", "1");
 		CartPage cart = new CartPage(driver);
 		cart.clearCart();
 		String actual = cart.getInfoCart();

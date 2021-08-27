@@ -62,24 +62,20 @@ public class MenuPage extends BasePage {
 
 	// Click Login button
 	public void clicksignIn() {
-		if (isExist(loginBtn)) {
-			click(loginBtn);
-			sleep(2000);
-		}
+		click(loginBtn);
+		sleep(2000);
 	}
 
 	// Click my account
 	public void clickMyacount() {
-		if (isExist(myAcountBtn)) {
-			click(myAcountBtn);
-			sleep(2000);
-		}
+		click(myAcountBtn);
+		sleep(2000);
 	}
 
 	// Press logout
 	public void LogOut() {
 		click(logOutBtn);
-		sleep(2500);
+		sleep(3000);
 
 	}
 
@@ -110,10 +106,11 @@ public class MenuPage extends BasePage {
 		click(contactUsBtn);
 
 	}
+
 	// Click on dress menu
 	public void clickDressCategory() {
 		click(dressBtn);
-		
+
 	}
 
 	// Validate
@@ -135,7 +132,7 @@ public class MenuPage extends BasePage {
 	}
 
 	public String checkLogOut() {
-		return getT(logOutBtn);
+		return getT(loginBtn);
 	}
 
 //	public void vrifyAcount() {

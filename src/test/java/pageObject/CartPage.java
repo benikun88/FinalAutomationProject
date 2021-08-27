@@ -46,6 +46,7 @@ public class CartPage extends MenuPage {
 
 	public CartPage(WebDriver driver) {
 		super(driver);
+		sleep(2000);
 	}
 
 	// Remove product from cart
