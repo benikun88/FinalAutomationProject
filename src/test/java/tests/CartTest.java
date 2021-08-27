@@ -132,7 +132,7 @@ public class CartTest extends BaseTest {
 //		ProductPage product = new ProductPage(driver);
 //		product.addDress("S", "Petite", "1");
 		CartPage cart = new CartPage(driver);
-		cart.changeQuantity("4");
+		cart.changeQuantity("5");
 		String actual = cart.getstockErr();
 		String expectd = "S does not have sufficient stock.";
 		assertEquals(actual, expectd);
@@ -148,7 +148,7 @@ public class CartTest extends BaseTest {
 //		product.addDress("S", "Petite", "1");
 		CartPage cart = new CartPage(driver);
 		double expectd = cart.getTotalprice();
-		cart.changeQuantity("4");
+		cart.changeQuantity("5");
 		double actual = cart.getTotalprice();
 		assertEquals(actual, expectd);
 		cart.clearCart();
