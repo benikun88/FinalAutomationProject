@@ -29,13 +29,9 @@ public class CartTest extends BaseTest {
 
 	@Test(description = "add product to cart")
 	public void tc_15_addToCart() {
-//		MainPage mainPage = new MainPage(driver);
-//		mainPage.chooseProduct("Slim fit V-neck men");
-//		ProductPage product = new ProductPage(driver);
-//		product.addShirt("M", "1");
 		CartPage cart = new CartPage(driver);
 		boolean actual = cart.checkItemExist(product1);
-//		boolean expectd = true;
+
 		assertTrue(actual);
 		cart.removeItem(product1);
 		cart.goHomePage();
@@ -44,10 +40,7 @@ public class CartTest extends BaseTest {
 
 	@Test(description = "Remove product from cart")
 	public void tc_16_removeFromCart() {
-//		MainPage mainPage = new MainPage(driver);
-//		mainPage.chooseProduct("Slim fit V-neck men");
-//		ProductPage product = new ProductPage(driver);
-//		product.addShirt("M", "1");
+
 		CartPage cart = new CartPage(driver);
 		cart.removeItem(product1);
 		String actual = cart.getcartMsg();
@@ -59,10 +52,7 @@ public class CartTest extends BaseTest {
 
 	@Test(description = "Empty cart")
 	public void tc_17_emptyCart() {
-//		MainPage mainP = new MainPage(driver);
-//		mainP.chooseProduct("Regular Fit V-neck woman");
-//		ProductPage product = new ProductPage(driver);
-//		pro.addShirt("S", "1");
+
 		product.goHomePage();
 		mainPage = new MainPage(driver);
 		mainPage.chooseProduct(product2);
@@ -79,10 +69,6 @@ public class CartTest extends BaseTest {
 
 	@Test(description = "update cart")
 	public void tc_18_updateCart() {
-//		MainPage mainPage = new MainPage(driver);
-//		mainPage.chooseProduct("Sleeveless Dress");
-//		ProductPage product = new ProductPage(driver);
-//		product.addDress("M", "Regular", "1");
 		CartPage cart = new CartPage(driver);
 		cart.changeQuantity("2");
 		double actual = cart.getTotalprice();
@@ -95,10 +81,6 @@ public class CartTest extends BaseTest {
 
 	@Test(description = "apply valid coupon")
 	public void tc_19_applyCoupon() {
-//		MainPage mainPage = new MainPage(driver);
-//		mainPage.chooseProduct("Sleeveless Dress");
-//		ProductPage product = new ProductPage(driver);
-//		product.addDress("M", "Regular", "1");
 		CartPage cart = new CartPage(driver);
 		double discount = cart.getTotalprice() * 0.10;
 		double expectd = cart.getTotalpriceShip() - discount;
@@ -112,10 +94,6 @@ public class CartTest extends BaseTest {
 
 	@Test(description = "apply invalid coupon")
 	public void tc_20_applyInvalidCoupon() {
-//		MainPage mainPage = new MainPage(driver);
-//		mainPage.chooseProduct("Sleeveless Dress");
-//		ProductPage product = new ProductPage(driver);
-//		product.addDress("M", "Regular", "1");
 		CartPage cart = new CartPage(driver);
 		cart.applyCoupon("test");
 		String actual = cart.getCpnErr();
@@ -127,10 +105,6 @@ public class CartTest extends BaseTest {
 
 	@Test(description = "update out of stock quantity-error")
 	public void tc_21_updateOutOfStockToCart() {
-//		MainPage mainPage = new MainPage(driver);
-//		mainPage.chooseProduct("Sleeveless Dress");
-//		ProductPage product = new ProductPage(driver);
-//		product.addDress("S", "Petite", "1");
 		CartPage cart = new CartPage(driver);
 		cart.changeQuantity("5");
 		String actual = cart.getstockErr();
@@ -142,10 +116,6 @@ public class CartTest extends BaseTest {
 
 	@Test(description = "add out of stock quantity-total price check")
 	public void tc_22_updateOutOfStockToCart() {
-//		MainPage mainPage = new MainPage(driver);
-//		mainPage.chooseProduct("Sleeveless Dress");
-//		ProductPage product = new ProductPage(driver);
-//		product.addDress("S", "Petite", "1");
 		CartPage cart = new CartPage(driver);
 		double expectd = cart.getTotalprice();
 		cart.changeQuantity("5");

@@ -29,9 +29,6 @@ public class LoginTest extends BaseTest {
 
 	@Test(description = "Login with valid Data")
 	public void tc_05_valid() {
-//		MainPage mainPage = new MainPage(driver);
-//		mainPage.clicksignIn();
-//		LoginPage loginPage = new LoginPage(driver);
 		loginPage.login(user, password);
 		String actual = mainPage.getUserName();
 		String expectd = "Hello Deon Metz!";
@@ -43,9 +40,6 @@ public class LoginTest extends BaseTest {
 
 	@Test(dataProvider = "getData", description = "Login with invalid user name")
 	public void tc_06_inValidUser(String invalidUser, String invalidPassword) {
-//		MainPage mainPage = new MainPage(driver);
-//		mainPage.clicksignIn();
-//		LoginPage loginPage = new LoginPage(driver);
 		loginPage.login(invalidUser, invalidPassword);
 		String actual = loginPage.getError();
 		String expectd = "Invalid credentials.";
@@ -55,9 +49,6 @@ public class LoginTest extends BaseTest {
 
 	@Test(description = "Login with invalid password")
 	public void tc_07_inValidPass() {
-//		MainPage mainPage = new MainPage(driver);
-//		mainPage.clicksignIn();
-//		LoginPage loginPage = new LoginPage(driver);
 		loginPage.login("fashion@example.com", "ylius");
 		String actual = loginPage.getError();
 		String expectd = "Invalid credentials.";
@@ -67,9 +58,6 @@ public class LoginTest extends BaseTest {
 
 	@Test(description = "check login after page reload")
 	public void tc_08_validReloadPage() {
-//		MainPage mainPage = new MainPage(driver);
-//		mainPage.clicksignIn();
-//		LoginPage loginPage = new LoginPage(driver);
 		loginPage.login(user, password);
 		driver.navigate().refresh();
 		loginPage.sleep(2000);
@@ -82,9 +70,6 @@ public class LoginTest extends BaseTest {
 
 	@Test(description = "Sing out after login")
 	public void tc_09_validReloadPage() {
-//		MainPage mainPage = new MainPage(driver);
-//		mainPage.clicksignIn();
-//		LoginPage loginPage = new LoginPage(driver);
 		loginPage.login(user, password);
 		mainPage = new MainPage(driver);
 		mainPage.LogOut();
