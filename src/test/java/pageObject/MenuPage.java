@@ -128,7 +128,8 @@ public class MenuPage extends BasePage {
 	}
 
 	public String getUserName() {
-		return getT(userNamElement);
+		String str=getT(userNamElement);
+		return str.substring(0,5);
 	}
 
 	public String checkLogOut() {

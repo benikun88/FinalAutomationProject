@@ -21,8 +21,8 @@ public class E2ETest extends BaseTest {
 	MainPage mainPage;
 	ProductPage product;
 	LoginPage loginPage;
-	String product1 = "Slim fit V-neck men";
-	String product2 = "Slim fit men";
+	String product1 = "Slim fit woman";
+	String product2 = "Regular fit men";
 	String user = "fashion@example.com";
 	String password = "sylius";
 
@@ -34,7 +34,7 @@ public class E2ETest extends BaseTest {
 		loginPage.login(user, password);
 		mainPage.chooseProduct(product1);
 		product = new ProductPage(driver);
-		product.addShirt("XL", "1");
+		product.addShirt("M", "1");
 		CartPage cart = new CartPage(driver);
 		cart.clickCheckout();
 		AdressessPage addPage = new AdressessPage(driver);

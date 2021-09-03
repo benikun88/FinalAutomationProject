@@ -18,9 +18,9 @@ public class MyAcountTest extends BaseTest {
 	
 	MainPage mainPage;
 	LoginPage loginPage;
-	String username = "b@gmail.com";
-	String password = "12345";
-	String newPassword = "09876";
+	String username = "fashion@example.com";
+	String password = "sylius";
+	String newPassword = "12345";
 
 	@BeforeMethod
 	public void goToLoginPage() {

@@ -31,7 +31,7 @@ public class LoginTest extends BaseTest {
 	public void tc_05_valid() {
 		loginPage.login(user, password);
 		String actual = mainPage.getUserName();
-		String expectd = "Hello Deon Metz!";
+		String expectd = "Hello";
 		assertEquals(actual, expectd);
 		mainPage = new MainPage(driver);
 		mainPage.LogOut();
@@ -62,7 +62,7 @@ public class LoginTest extends BaseTest {
 		driver.navigate().refresh();
 		loginPage.sleep(2000);
 		String actual = mainPage.getUserName();
-		String expectd = "Hello Deon Metz!";
+		String expectd = "Hello";
 		assertEquals(actual, expectd);
 		mainPage = new MainPage(driver);
 		mainPage.LogOut();

@@ -9,6 +9,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -24,9 +25,10 @@ public class BaseTest {
 	WebDriver driver;
 
 	@BeforeClass
-	public void setup() throws InterruptedException {
-		WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver();
+	public void setup(ITestContext testContext) throws InterruptedException {
+		WebDriverManager.firefoxdriver().setup();
+		driver = new FirefoxDriver();
+		testContext.setAttribute("WebDriver", this.driver);
 		driver.manage().window().maximize();
 		driver.get(Utl.readProperty("url"));
 

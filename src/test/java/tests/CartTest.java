@@ -16,8 +16,9 @@ public class CartTest extends BaseTest {
 
 	MainPage mainPage;
 	ProductPage product;
-	String product1 = "Slim fit V-neck men";
-	String product2 = "Slim fit men";
+	String product1 = "Slim fit woman";
+	String product2 = "Regular fit men";
+	String coupon="C80B";
 
 	@BeforeMethod
 	public void choooseProduct() {
@@ -31,7 +32,6 @@ public class CartTest extends BaseTest {
 	public void tc_15_addToCart() {
 		CartPage cart = new CartPage(driver);
 		boolean actual = cart.checkItemExist(product1);
-
 		assertTrue(actual);
 		cart.removeItem(product1);
 		cart.goHomePage();
@@ -57,7 +57,7 @@ public class CartTest extends BaseTest {
 		mainPage = new MainPage(driver);
 		mainPage.chooseProduct(product2);
 		product = new ProductPage(driver);
-		product.addShirt("M", "1");
+		product.addShirt("S", "1");
 		CartPage cart = new CartPage(driver);
 		cart.clearCart();
 		String actual = cart.getInfoCart();
@@ -85,7 +85,7 @@ public class CartTest extends BaseTest {
 		double discount = cart.getTotalprice() * 0.10;
 		double expectd = cart.getTotalpriceShip() - discount;
 		expectd = Precision.round(expectd, 2);
-		cart.applyCoupon("testCP");
+		cart.applyCoupon(coupon);
 		double actual = cart.getTotalpriceShip();
 		assertEquals(actual, expectd);
 		cart.clearCart();

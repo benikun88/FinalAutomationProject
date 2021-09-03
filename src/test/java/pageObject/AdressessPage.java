@@ -44,6 +44,7 @@ public class AdressessPage extends CheckOutPage {
 		setcity(city);
 		setpostcode(postcode);
 		click(nextBtn);
+		sleep(2000);
 
 	}
 
