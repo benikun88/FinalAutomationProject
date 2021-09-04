@@ -6,13 +6,13 @@
 	</listeners>
 	<test thread-count="5" name="Test" parallel="classes">
 		<classes>
-			<class name="tests.LoginTest"/>
-			<class name="tests.CartTest"/>
-			<class name="tests.ContactUsTest"/>
-			<class name="tests.E2ETest"/>
-			<class name="tests.MyAcountTest"/>
-			<class name="tests.RegisterTest"/>
-			<class name="tests.SearchProductTest"/>
+<!--			<class name="tests.LoginTest"/>-->
+<!--			<class name="tests.CartTest"/>-->
+				<class name="tests.ContactUsTest"/>
+<!--			<class name="tests.E2ETest"/>-->
+<!--			<class name="tests.MyAcountTest"/>-->
+<!--			<class name="tests.RegisterTest"/>-->
+<!--			<class name="tests.SearchProductTest"/>-->
 			
 		</classes>
 	</test>

@@ -24,7 +24,7 @@ public class AllureAttachment {
 	
 	 @Attachment(value = "Page Screenshot", type = "image/png", fileExtension = ".png")
 	 static byte[] attachScreenshot(WebDriver driver) {
-	  return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+		 return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
 	 }
 
 //	// Screen shot element
