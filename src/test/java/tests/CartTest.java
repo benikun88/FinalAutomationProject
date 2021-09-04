@@ -83,18 +83,18 @@ public class CartTest extends BaseTest {
 
 	}
 
-	@Test(description = "apply valid coupon")
-	public void tc_19_applyCoupon() {
-		CartPage cart = new CartPage(driver);
-		double discount = cart.getTotalprice() * 0.10;
-		double expectd = cart.getTotalpriceShip() - discount;
-		expectd = Precision.round(expectd, 2);
-		cart.applyCoupon(coupon);
-		double actual = cart.getTotalpriceShip();
-		assertEquals(actual, expectd);
-		cart.clearCart();
-		cart.goHomePage();
-	}
+//	@Test(description = "apply valid coupon")
+//	public void tc_19_applyCoupon() {
+//		CartPage cart = new CartPage(driver);
+//		double discount = cart.getTotalprice() * 0.10;
+//		double expectd = cart.getTotalpriceShip() - discount;
+//		expectd = Precision.round(expectd, 2);
+//		cart.applyCoupon(coupon);
+//		double actual = cart.getTotalpriceShip();
+//		assertEquals(actual, expectd);
+//		cart.clearCart();
+//		cart.goHomePage();
+//	}
 
 	@Test(description = "apply invalid coupon")
 	public void tc_20_applyInvalidCoupon() {

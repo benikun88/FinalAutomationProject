@@ -82,6 +82,7 @@ public class MenuPage extends BasePage {
 	// Go to home page
 	public void goHomePage() {
 		click(homePageBtn);
+		sleep(1000);
 	}
 
 	// Go to register page

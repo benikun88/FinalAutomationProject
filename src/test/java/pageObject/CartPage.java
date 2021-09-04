@@ -3,9 +3,11 @@ package pageObject;
 import java.util.List;
 
 import org.apache.commons.math3.util.Precision;
+import org.apache.tools.ant.taskdefs.Sleep;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openxmlformats.schemas.drawingml.x2006.chart.STLegendPos;
 
 public class CartPage extends MenuPage {
 
@@ -83,6 +85,7 @@ public class CartPage extends MenuPage {
 	public void applyCoupon(String cpn) {
 		fillText(couponElement, cpn);
 		click(applyCouponBtn);
+		sleep(1000);
 	}
 
 	// Validation
