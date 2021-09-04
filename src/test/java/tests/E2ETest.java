@@ -14,6 +14,7 @@ import pageObject.LoginPage;
 import pageObject.MainPage;
 import pageObject.PaymentPage;
 import pageObject.ProductPage;
+import pageObject.ProductsPage;
 import pageObject.ShippingPage;
 
 public class E2ETest extends BaseTest {
@@ -21,8 +22,9 @@ public class E2ETest extends BaseTest {
 	MainPage mainPage;
 	ProductPage product;
 	LoginPage loginPage;
-	String product1 = "Slim fit woman";
-	String product2 = "Regular fit men";
+	ProductsPage products;
+	String product1 = "Summer tunic";
+	String product2 = "Slim fit men";
 	String user = "fashion@example.com";
 	String password = "sylius";
 
@@ -32,9 +34,11 @@ public class E2ETest extends BaseTest {
 		mainPage.clicksignIn();
 		loginPage = new LoginPage(driver);
 		loginPage.login(user, password);
-		mainPage.chooseProduct(product1);
+		mainPage.clickDressCategory();
+		products=new ProductsPage(driver);
+		products.chooseProduct(product1);
 		product = new ProductPage(driver);
-		product.addShirt("M", "1");
+		product.addDress("S","Petite", "1");
 		CartPage cart = new CartPage(driver);
 		cart.clickCheckout();
 		AdressessPage addPage = new AdressessPage(driver);
@@ -42,7 +46,7 @@ public class E2ETest extends BaseTest {
 		ShippingPage shipMethod = new ShippingPage(driver);
 		shipMethod.chooseshipping("FedEx");
 		PaymentPage payment = new PaymentPage(driver);
-		payment.choosePayMethod("Cash on delivery");
+		payment.choosePayMethod("Bank transfer");
 		CompleteOrderPage coplOrder = new CompleteOrderPage(driver);
 		coplOrder.placeOrder();
 		String actual = coplOrder.checkOrderSuccess();

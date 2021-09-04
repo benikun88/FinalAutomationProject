@@ -11,21 +11,25 @@ import pageObject.CartPage;
 import pageObject.LoginPage;
 import pageObject.MainPage;
 import pageObject.ProductPage;
+import pageObject.ProductsPage;
 
 public class CartTest extends BaseTest {
 
 	MainPage mainPage;
 	ProductPage product;
-	String product1 = "Slim fit woman";
-	String product2 = "Regular fit men";
+	ProductsPage products;
+	String product1 = "Summer tunic";
+	String product2 = "Slim fit men";
 	String coupon="C80B";
 
 	@BeforeMethod
 	public void choooseProduct() {
 		mainPage = new MainPage(driver);
-		mainPage.chooseProduct(product1);
+		mainPage.clickDressCategory();
+		products=new ProductsPage(driver);
+		products.chooseProduct(product1);
 		product = new ProductPage(driver);
-		product.addShirt("S", "1");
+		product.addDress("S","Petite", "1");
 	}
 
 	@Test(description = "add product to cart")
@@ -106,9 +110,9 @@ public class CartTest extends BaseTest {
 	@Test(description = "update out of stock quantity-error")
 	public void tc_21_updateOutOfStockToCart() {
 		CartPage cart = new CartPage(driver);
-		cart.changeQuantity("5");
+		cart.changeQuantity("99");
 		String actual = cart.getstockErr();
-		String expectd = "S does not have sufficient stock.";
+		String expectd = "S Petite does not have sufficient stock.";
 		assertEquals(actual, expectd);
 		cart.clearCart();
 		cart.goHomePage();
@@ -118,7 +122,7 @@ public class CartTest extends BaseTest {
 	public void tc_22_updateOutOfStockToCart() {
 		CartPage cart = new CartPage(driver);
 		double expectd = cart.getTotalprice();
-		cart.changeQuantity("5");
+		cart.changeQuantity("99");
 		double actual = cart.getTotalprice();
 		assertEquals(actual, expectd);
 		cart.clearCart();
