@@ -11,7 +11,10 @@ The final project is part of the QA Automation course (instructor: Gal Matalon) 
 
 Test cases :
 
+
+
 Login and Sign up:
+
 1	Sign up- valid unused email
 
 3	Sign up-Already used email address
@@ -26,7 +29,9 @@ Login and Sign up:
 
 9	sing out	
 
+
 Customer support:
+
 12	Send a message
 
 13	Validation-invalid email address
@@ -52,12 +57,14 @@ Cart and Order flow:
 22	add to cart unavilale quantity-total price
 
 23	order flow (user login)
+
 	
 Search:
 
 24	Search-existing item
 
 25	Search-non existing item
+
 	
 My account:
 
