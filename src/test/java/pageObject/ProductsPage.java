@@ -34,7 +34,6 @@ public class ProductsPage extends MenuPage {
 		for (WebElement el : productsList) {
 			if (el.getText().equalsIgnoreCase(name)) {
 				click(el);
-				sleep(3000);
 				break;
 			}
 		}
@@ -45,7 +44,6 @@ public class ProductsPage extends MenuPage {
 	public void search(String item) {
 		fillText(searchFieldElement, item);
 		click(searchBtn);
-		sleep(2000);
 	}
 
 	// Clear the search results
@@ -56,11 +54,13 @@ public class ProductsPage extends MenuPage {
 	// validate
 	// Get the name item
 	public String checkItmeName() {
+		waitForVisibleOfElement(productName);
 		return getT(productName);
 	}
 
 	// Get message if item don't exist
 	public String getSearchInfoMsg() {
+		waitForVisibleOfElement(searchInfoMsg);
 		return getT(searchInfoMsg);
 	}
 }

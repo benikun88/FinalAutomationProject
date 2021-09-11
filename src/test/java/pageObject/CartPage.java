@@ -50,12 +50,12 @@ public class CartPage extends MenuPage {
 
 	public CartPage(WebDriver driver) {
 		super(driver);
-		sleep(2000);
 	}
 
 	// Remove product from cart
 	@Step("Remove Item: {0}")
 	public void removeItem(String name) {
+		sleep(2000);
 		int index = 0;
 		for (WebElement el : productsList) {
 			if (el.getText().equalsIgnoreCase(name)) {
@@ -69,17 +69,20 @@ public class CartPage extends MenuPage {
 
 	// Clear the cart
 	public void clearCart() {
+		waitForVisibleOfElement(clearCartBtn);
 		click(clearCartBtn);
 	}
 
 	// Click pass to checkout page
 	public void clickCheckout() {
+		waitForVisibleOfElement(checkoutBtn);
 		click(checkoutBtn);
 	}
 
 	// change the quantity of a product in the cart
 	@Step("Ass Quantity: {0}")
 	public void changeQuantity(String qcy) {
+		waitForVisibleOfElement(quantityElement);
 		fillText(quantityElement, qcy);
 		click(updateBtnElement);
 		sleep(2000);
@@ -88,6 +91,7 @@ public class CartPage extends MenuPage {
 	// Apply coupon in the cart
 	@Step("Apply copoun: {0}")
 	public void applyCoupon(String cpn) {
+		waitForVisibleOfElement(couponElement);
 		fillText(couponElement, cpn);
 		click(applyCouponBtn);
 		sleep(1000);
@@ -161,6 +165,7 @@ public class CartPage extends MenuPage {
 
 	// Get the total price of product
 	public double getTotalprice() {
+		waitForVisibleOfElement(TotalPriceElement);
 		String unit = getT(TotalPriceElement);
 		int size = unit.length();
 		unit = unit.substring(1, size);

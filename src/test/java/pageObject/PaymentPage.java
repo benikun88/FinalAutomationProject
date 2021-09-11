@@ -27,7 +27,7 @@ public class PaymentPage extends MenuPage {
 		for (WebElement el : payOptionList) {
 			if (el.getText().equalsIgnoreCase(payOption)) {
 				click(el);
-				sleep(3000);
+				explicitWaitClickable(nextBtn);
 				click(nextBtn);
 				break;
 			}

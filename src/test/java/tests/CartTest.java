@@ -26,8 +26,8 @@ public class CartTest extends BaseTest {
 	private ProductPage product;
 	private ProductsPage products;
 	private String product1 = "Summer tunic";
-	private String product2 = "Slim fit men";
-	private String coupon = "AC";
+	private String product2 = "Basic winter hot cap";
+	private String coupon = "D8";
 
 	@BeforeMethod
 	public void choooseProduct() {
@@ -77,7 +77,7 @@ public class CartTest extends BaseTest {
 		mainPage = new MainPage(driver);
 		mainPage.chooseProduct(product2);
 		product = new ProductPage(driver);
-		product.addShirt("S", "1");
+		product.addcap("1");
 		CartPage cart = new CartPage(driver);
 		cart.clearCart();
 		String actual = cart.getInfoCart();

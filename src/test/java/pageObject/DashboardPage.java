@@ -25,7 +25,6 @@ public class DashboardPage extends MyAcountPage {
 	// Change the password
 	public void changePass() {
 		click(changePassBtn);
-		sleep(1000);
 	}
 
 	// click on verify account button
@@ -36,6 +35,7 @@ public class DashboardPage extends MyAcountPage {
 	// validation
 	// Get success message
 	public String getSucessMsg() {
+		waitForVisibleOfElement(messageElement);
 		return getT(messageElement);
 	}
 }

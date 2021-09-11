@@ -37,7 +37,6 @@ public class LoginPage extends MenuPage {
 		setUser(email);
 		setPass(password);
 		click(singElement);
-		sleep(2000);
 	}
 
 	// Fill the user text box
@@ -65,13 +64,13 @@ public class LoginPage extends MenuPage {
 	// Validation
 	// Get the error login error message
 	public String getError() {
-
+		waitForVisibleOfElement(loginEreMsg);
 		return getT(loginEreMsg);
 	}
 
 	// Get the success login message
 	public String getMsg() {
-
+		waitForVisibleOfElement(posativeMsg);
 		return getT(posativeMsg);
 	}
 

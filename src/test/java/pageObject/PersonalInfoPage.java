@@ -56,12 +56,12 @@ public class PersonalInfoPage extends MyAcountPage {
 		setEmail(email);
 		setGender(gender);
 		click(saveChangesBtn);
-		sleep(3000);
 	}
 
 	// Validate
 	// Check success update
 	public String getSucessMsg() {
+		waitForVisibleOfElement(messageElement);
 		return getT(messageElement);
 	}
 

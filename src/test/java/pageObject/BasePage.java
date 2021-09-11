@@ -98,6 +98,15 @@ public class BasePage {
 		action.moveToElement(el).perform();
 	}
 
+	// waiting
+	protected void waitForVisibleOfElement(WebElement el) {
+		wait.until(ExpectedConditions.visibilityOf(el));
+	}
+
+	protected void waitForInVisibleOfElement(WebElement el) {
+		wait.until(ExpectedConditions.invisibilityOf(el));
+	}
+
 	// Wait for objects elements instead of sleep
 	public void implicitWait(long timeunit) {
 		driver.manage().timeouts().implicitlyWait(timeunit, TimeUnit.SECONDS);

@@ -17,7 +17,7 @@ public class MenuPage extends BasePage {
 	WebElement capsDropBtn;
 	@FindBy(css = ".ui.dropdown.item:nth-child(3)")
 	WebElement jeansDropBtn;
-	@FindBy(css = ".stackable.menu:nth-child(3) > a.item:nth-child(2)")
+	@FindBy(xpath ="//a[contains(text(),'Dresses')]")
 	WebElement dressBtn;
 	@FindBy(css = "#sylius-cart-total")
 	WebElement cartTotalElement;
@@ -57,32 +57,27 @@ public class MenuPage extends BasePage {
 	// Click on the cart button on the header
 	public void clickCart() {
 		click(cartBtn);
-		sleep(2000);
 	}
 
 	// Click Login button
 	public void clicksignIn() {
 		click(loginBtn);
-		sleep(2000);
 	}
 
 	// Click my account
 	public void clickMyacount() {
 		click(myAcountBtn);
-		sleep(2000);
 	}
 
 	// Press logout
 	public void LogOut() {
 		click(logOutBtn);
-		sleep(3000);
 
 	}
 
 	// Go to home page
 	public void goHomePage() {
 		click(homePageBtn);
-		sleep(1000);
 	}
 
 	// Go to register page
@@ -117,6 +112,7 @@ public class MenuPage extends BasePage {
 	// Validate
 	// Check the number of items in the cart
 	public String checkNumOfItems() {
+		waitForVisibleOfElement(cartBtn);
 		return getT(cartBtn);
 	}
 
@@ -127,17 +123,20 @@ public class MenuPage extends BasePage {
 
 	// Get the general message
 	public String getGeneralMsg() {
+		waitForVisibleOfElement(generalMsg);
 		return getT(generalMsg);
 	}
 
 	// Get the name of the user
 	public String getUserName() {
+		waitForVisibleOfElement(userNamElement);
 		String str = getT(userNamElement);
 		return str.substring(0, 5);
 	}
 
 	// check the user is logout
 	public String checkLogOut() {
+		waitForVisibleOfElement(loginBtn);
 		return getT(loginBtn);
 	}
 

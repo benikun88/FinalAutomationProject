@@ -38,7 +38,6 @@ public class ProductPage extends MenuPage {
 		changeHeight(height);
 		changeQuantity(Quantity);
 		addToCart();
-		sleep(2000);
 	}
 
 	// Add jeans to cart
@@ -47,7 +46,6 @@ public class ProductPage extends MenuPage {
 		changeJeansSize(size);
 		changeQuantity(Quantity);
 		addToCart();
-		sleep(2000);
 	}
 
 	// Add shirt to cart
@@ -56,14 +54,12 @@ public class ProductPage extends MenuPage {
 		changeShirtSize(size);
 		changeQuantity(Quantity);
 		addToCart();
-		sleep(2000);
 	}
 
 	// Add cap to cart
 	public void addcap(String Quantity) {
 		changeQuantity(Quantity);
 		addToCart();
-		sleep(2000);
 	}
 
 	public void addToCart() {

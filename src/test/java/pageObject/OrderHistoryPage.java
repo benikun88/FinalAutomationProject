@@ -35,7 +35,7 @@ public class OrderHistoryPage extends MyAcountPage {
 		for (WebElement el : showOrderList) {
 			if (el.getAttribute("href").contains(name)) {
 				click(el);
-				sleep(3000);
+				sleep(2000);
 				break;
 			}
 		}

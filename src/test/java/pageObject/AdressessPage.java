@@ -42,11 +42,12 @@ public class AdressessPage extends CheckOutPage {
 		setlastName(lastName);
 		setstreetAddress(streetAddress);
 		setcountry(country);
-		sleep(2000);
+		waitForVisibleOfElement(cityElement);
 		setcity(city);
 		setpostcode(postcode);
-		click(nextBtn);
 		sleep(2000);
+		click(nextBtn);
+		sleep(1000);
 
 	}
 

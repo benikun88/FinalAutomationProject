@@ -29,7 +29,8 @@ public class ShippingPage extends MenuPage {
 		for (WebElement el : shipMethod) {
 			if (el.getText().equalsIgnoreCase(ship)) {
 				click(el);
-				sleep(2000);
+				//sleep(2000);
+				explicitWaitClickable(nextBtn);
 				click(nextBtn);
 				break;
 			}

@@ -34,22 +34,25 @@ public class ContactUsPage extends MenuPage {
 		fillText(emailElement, email);
 		fillText(messagFiledElement, msg);
 		click(sendBtn);
-		sleep(2000);
+//		sleep(2000);
 	}
 
 	// Validation
 	// Check the message if success send
 	public String getMsg() {
+		waitForVisibleOfElement(generalMsg);
 		return getT(generalMsg);
 	}
 
 	// get error of the email field
 	public String getEmailAlert() {
+		waitForVisibleOfElement(emailAlert);
 		return getT(emailAlert);
 	}
 
 	// get error of the message field
 	public String getMsgAlert() {
+		waitForVisibleOfElement(msgAlert);
 		return getT(msgAlert);
 	}
 
