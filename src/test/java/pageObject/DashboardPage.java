@@ -34,6 +34,7 @@ public class DashboardPage extends MyAcountPage {
 	}
 
 	// validation
+	// Get success message
 	public String getSucessMsg() {
 		return getT(messageElement);
 	}

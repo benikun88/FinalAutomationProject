@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import io.qameta.allure.Step;
+
 public class ContactUsPage extends MenuPage {
 
 	@FindBy(css = "#sylius_contact_email")
@@ -26,6 +28,8 @@ public class ContactUsPage extends MenuPage {
 		// TODO Auto-generated constructor stub
 	}
 
+	// Send message to costumer support
+	@Step("Enter email: {0},and message {1}")
 	public void sendMsg(String email, String msg) {
 		fillText(emailElement, email);
 		fillText(messagFiledElement, msg);
@@ -33,7 +37,7 @@ public class ContactUsPage extends MenuPage {
 		sleep(2000);
 	}
 
-	// Valdation
+	// Validation
 	// Check the message if success send
 	public String getMsg() {
 		return getT(generalMsg);

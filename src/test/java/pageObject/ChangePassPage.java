@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import io.qameta.allure.Step;
+
 public class ChangePassPage extends MyAcountPage {
 
 	@FindBy(css = "#sylius_user_change_password_currentPassword")
@@ -26,6 +28,7 @@ public class ChangePassPage extends MyAcountPage {
 	}
 
 	// Change the password
+	@Step("change current pass: {0},to new pass {1}")
 	public void changePass(String current, String newPass, String Confirm) {
 		fillText(currentPassElement, current);
 		fillText(newPasswordElement, newPass);
@@ -38,10 +41,12 @@ public class ChangePassPage extends MyAcountPage {
 		return getT(currentPassAlert);
 	}
 
+	// Get the error if new pass isn't match to confirm
 	public String getnewPassErr() {
 		return getT(newPasswordElement);
 	}
 
+	// Get massage success password change
 	public String getSuccesChangeMsg() {
 		return getT(messageElement);
 	}

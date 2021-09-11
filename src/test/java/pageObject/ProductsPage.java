@@ -7,6 +7,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import io.qameta.allure.Step;
+
 public class ProductsPage extends MenuPage {
 
 	@FindBy(css = "#criteria_search_value")
@@ -20,13 +22,14 @@ public class ProductsPage extends MenuPage {
 	@FindBy(css = ".sylius-product-name")
 	WebElement productName;
 	@FindBy(css = ".info.message .content p")
-	WebElement searchInfo;
+	WebElement searchInfoMsg;
 
 	public ProductsPage(WebDriver driver) {
 		super(driver);
 	}
 
 	// Choose product
+	@Step("Choose product {0}")
 	public void chooseProduct(String name) {
 		for (WebElement el : productsList) {
 			if (el.getText().equalsIgnoreCase(name)) {
@@ -38,6 +41,7 @@ public class ProductsPage extends MenuPage {
 	}
 
 	// Search product from available items
+	@Step("search product {0}")
 	public void search(String item) {
 		fillText(searchFieldElement, item);
 		click(searchBtn);
@@ -50,10 +54,13 @@ public class ProductsPage extends MenuPage {
 	}
 
 	// validate
+	// Get the name item
 	public String checkItmeName() {
 		return getT(productName);
 	}
-	public String getSearchInfo() {
-		return getT(searchInfo);
+
+	// Get message if item don't exist
+	public String getSearchInfoMsg() {
+		return getT(searchInfoMsg);
 	}
 }

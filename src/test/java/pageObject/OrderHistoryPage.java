@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import io.qameta.allure.Step;
+
 public class OrderHistoryPage extends MyAcountPage {
 
 	@FindBy(css = "tbody:nth-child(2) tr.item:nth-child(1) > td:nth-child(1)")
@@ -27,7 +29,9 @@ public class OrderHistoryPage extends MyAcountPage {
 		super(driver);
 	}
 
-	public void chooseProduct(String name) {
+	// show order from list
+	@Step("choose order: {0}")
+	public void chooseOrder(String name) {
 		for (WebElement el : showOrderList) {
 			if (el.getAttribute("href").contains(name)) {
 				click(el);
@@ -38,7 +42,7 @@ public class OrderHistoryPage extends MyAcountPage {
 	}
 
 	// Validation
-
+	// Get status of the order
 	public String getStatus() {
 		return getT(statElements);
 	}

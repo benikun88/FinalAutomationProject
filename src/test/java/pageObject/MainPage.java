@@ -15,7 +15,7 @@ public class MainPage extends MenuPage {
 		super(driver);
 	}
 
-	// Choose a product from the main page 
+	// Choose a product from the main page
 	public void chooseProduct(String name) {
 		for (WebElement el : productsList) {
 			if (el.getText().equalsIgnoreCase(name)) {

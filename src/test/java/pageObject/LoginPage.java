@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import io.qameta.allure.Step;
+
 public class LoginPage extends MenuPage {
 
 	@FindBy(css = "#_username")
@@ -30,6 +32,7 @@ public class LoginPage extends MenuPage {
 	}
 
 	// Login to account
+	@Step("fill email: {0},fill password:{1}")
 	public void login(String email, String password) {
 		setUser(email);
 		setPass(password);
@@ -37,35 +40,45 @@ public class LoginPage extends MenuPage {
 		sleep(2000);
 	}
 
+	// Fill the user text box
+	@Step("fill email: {0}")
 	public void setUser(String email) {
 		fillText(userElement, email);
 	}
 
+	// Fill the user password box
+	@Step("fill email: {0}")
 	public void setPass(String password) {
 		fillText(passwordElement, password);
 	}
 
+	// Click on the Forget password button
 	public void clickForgotPassBtn() {
 		click(forgotPassBtn);
 	}
 
+	// Click on the create account button
 	public void clickCreateacountBtn() {
 		click(createAccountBtnElement);
 	}
 
 	// Validation
+	// Get the error login error message
 	public String getError() {
 
 		return getT(loginEreMsg);
 	}
 
+	// Get the success login message
 	public String getMsg() {
 
 		return getT(posativeMsg);
 	}
+
+	// Get the URL validation account
 	public String getUrlForUserVrify() {
-		String url=getT(verifyMsg);
-		url = url.substring(32,84);
+		String url = getT(verifyMsg);
+		url = url.substring(32, 84);
 		System.out.println(url);
 		return url;
 	}

@@ -120,26 +120,25 @@ public class MenuPage extends BasePage {
 		return getT(cartBtn);
 	}
 
+	// Check the cart price total
 	public String checkCartTotal() {
 		return getT(cartTotalElement);
 	}
 
+	// Get the general message
 	public String getGeneralMsg() {
 		return getT(generalMsg);
 	}
 
+	// Get the name of the user
 	public String getUserName() {
-		String str=getT(userNamElement);
-		return str.substring(0,5);
+		String str = getT(userNamElement);
+		return str.substring(0, 5);
 	}
 
+	// check the user is logout
 	public String checkLogOut() {
 		return getT(loginBtn);
 	}
-
-//	public void vrifyAcount() {
-//		String str=getT(generalSecondMsg);
-//		System.out.println(str.substring(0,2));
-//	}
 
 }

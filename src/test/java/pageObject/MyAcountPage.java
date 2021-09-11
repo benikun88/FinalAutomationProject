@@ -24,11 +24,13 @@ public class MyAcountPage extends MenuPage {
 		super(driver);
 	}
 
+	// Press on personal info tab in my account
 	public void clickPersonalInfoTab() {
 		click(personalInfoTab);
 	}
 
 	// validation
+	// Get message 
 	public String getMsg() {
 		return getT(messageElement);
 	}

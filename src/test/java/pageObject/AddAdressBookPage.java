@@ -1,37 +1,33 @@
 package pageObject;
 
 import java.util.List;
-import java.util.NoSuchElementException;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import com.beust.jcommander.internal.Console;
-
 import io.qameta.allure.Step;
 
-public class AdressessPage extends CheckOutPage {
+public class AddAdressBookPage extends MyAcountPage {
 
-	@FindBy(css = "#sylius_checkout_address_customer_email")
-	WebElement emailElement;
-	@FindBy(css = "#sylius_checkout_address_billingAddress_firstName")
+	@FindBy(css = "#sylius_address_firstName")
 	WebElement firsNameElement;
-	@FindBy(css = "#sylius_checkout_address_billingAddress_lastName")
+	@FindBy(css = "#sylius_address_lastName")
 	WebElement lastNameElement;
-	@FindBy(css = "#sylius_checkout_address_billingAddress_street")
+	@FindBy(css = "#sylius_address_street")
 	WebElement streetAddressElement;
-	@FindBy(css = "#sylius_checkout_address_billingAddress_countryCode")
+	@FindBy(css = "#sylius_address_countryCode")
 	WebElement countryElement;
-	@FindBy(css = "#sylius_checkout_address_billingAddress_city")
+	@FindBy(css = "#sylius_address_city")
 	WebElement cityElement;
-	@FindBy(css = "#sylius_checkout_address_billingAddress_postcode")
+	@FindBy(css = "#sylius_address_postcode")
 	WebElement postcodeElement;
-	@FindBy(css = "#next-step")
-	WebElement nextBtn;
+	@FindBy(css = ".plus")
+	WebElement addBtn;
 
-	public AdressessPage(WebDriver driver) {
+	public AddAdressBookPage(WebDriver driver) {
 		super(driver);
+		// TODO Auto-generated constructor stub
 	}
 
 	// fill address shipment in the order flow
@@ -42,33 +38,10 @@ public class AdressessPage extends CheckOutPage {
 		setlastName(lastName);
 		setstreetAddress(streetAddress);
 		setcountry(country);
-		sleep(2000);
 		setcity(city);
 		setpostcode(postcode);
-		click(nextBtn);
-		sleep(2000);
+		click(addBtn);
 
-	}
-
-	// fill address shipment in the order flow user not logged in
-	@Step("enter email: {0},first name: {1},last Name: {2},street Address: {3},country: {4},city: {5},postcode: {6}")
-	public void fillAddressNoEmail(String email, String firstName, String lastName, String streetAddress,
-			String country, String city, String postcode) {
-		setEmail(email);
-		setFirstName(firstName);
-		setlastName(lastName);
-		setstreetAddress(streetAddress);
-		setcountry(country);
-		setcity(city);
-		setpostcode(postcode);
-		click(nextBtn);
-
-	}
-
-	// fill Email filed
-	public void setEmail(String email) {
-
-		fillText(emailElement, email);
 	}
 
 	// fill first name filed

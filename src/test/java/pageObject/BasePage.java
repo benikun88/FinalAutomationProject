@@ -16,7 +16,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class BasePage {
 	WebDriver driver;
 	WebDriverWait wait;
-	
+
 	public BasePage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -24,15 +24,18 @@ public class BasePage {
 
 	}
 
+	// Accept the alert pop up
 	public void alertOK() {
 		driver.switchTo().alert().accept();
 	}
 
+	// Get the current URL page name
 	public String GetURL() {
 		String URL = driver.getCurrentUrl();
 		return URL;
 	}
 
+	// Fill the text in the text filed
 	public void fillText(WebElement el, String text) {
 		highlightElement(el, "yellow");
 		el.clear();
@@ -40,16 +43,19 @@ public class BasePage {
 		el.sendKeys(text);
 	}
 
+	// Click on element
 	public void click(WebElement el) {
 		highlightElement(el, "yellow");
 		el.click();
 	}
 
+	// Get the text of the element
 	public String getT(WebElement el) {
 		highlightElement(el, "yellow");
 		return el.getText();
 	}
 
+	// Create the system waiting before continue to next execution
 	public void sleep(long milis) {
 		try {
 			Thread.sleep(milis);
@@ -59,6 +65,7 @@ public class BasePage {
 		}
 	}
 
+	// Fill the alert with text
 	public void fillAlert(String text) {
 		driver.switchTo().alert().sendKeys(text);
 		driver.switchTo().alert().accept();
@@ -68,6 +75,7 @@ public class BasePage {
 		driver.quit();
 	}
 
+	// highlight the Element for failure test
 	public void highlightElement(WebElement element, String color) {
 		// keep the old style to change it back
 		String originalStyle = element.getAttribute("style");
@@ -84,41 +92,49 @@ public class BasePage {
 
 	}
 
+	// Hover with the mouse over elements
 	public void hoverMouse(WebElement el) {
 		Actions action = new Actions(driver);
 		action.moveToElement(el).perform();
 	}
 
+	// Wait for objects elements instead of sleep
 	public void implicitWait(long timeunit) {
 		driver.manage().timeouts().implicitlyWait(timeunit, TimeUnit.SECONDS);
 	}
 
+	// Wait for objects elements instead of sleep
 	public void explicitWaitVisibility(WebElement element) {
 //		WebDriverWait wait = new WebDriverWait(driver, 20);
 		wait.until(ExpectedConditions.visibilityOf(element));
 	}
 
+	// Wait for objects elements instead of sleep
 	public void explicitWaitClickable(WebElement element) {
 //		WebDriverWait wait = new WebDriverWait(driver, 20);
 		wait.until(ExpectedConditions.elementToBeClickable(element));
 	}
 
+	// Wait for objects elements instead of sleep
 	public void explicitWaitAllElements(List<WebElement> elements) {
 //		WebDriverWait wait = new WebDriverWait(driver, 20);
 		wait.until(ExpectedConditions.visibilityOfAllElements(elements));
 	}
 
+	// Select element from drop off list
 	public void SelectByValue(WebElement el, String Value) {
 		Select s = new Select(el);
 		s.selectByVisibleText(Value);
 	}
 
+	// Select element from drop off list
 	public void SelectByText(WebElement el, String text) {
 		Select s = new Select(el);
 		s.selectByVisibleText(text);
 
 	}
 
+	// Select element from drop off list
 	public void SelectByIndex(WebElement el, int i) {
 		Select s = new Select(el);
 		s.selectByIndex(i);

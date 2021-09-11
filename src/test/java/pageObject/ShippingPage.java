@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import io.qameta.allure.Step;
+
 public class ShippingPage extends MenuPage {
 
 	@FindBy(css = ".ui.segment .required")
@@ -21,7 +23,9 @@ public class ShippingPage extends MenuPage {
 		super(driver);
 	}
 
-	public void chooseshipping(String ship) {
+	// Choose the shipping method
+	@Step("choose shipping: {0}")
+	public void chooseShipping(String ship) {
 		for (WebElement el : shipMethod) {
 			if (el.getText().equalsIgnoreCase(ship)) {
 				click(el);
@@ -32,18 +36,19 @@ public class ShippingPage extends MenuPage {
 		}
 	}
 
-	public void deleteitem(String name) {
-		int index = 0;
-		for (WebElement el : shipMethod) {
-			if (el.getText().equalsIgnoreCase(name)) {
-				break;
-			}
-			index++;
-		}
-		click(shipMethodPrice.get(index));
-		sleep(2000);
-	}
+//	public void deleteitem(String name) {
+//		int index = 0;
+//		for (WebElement el : shipMethod) {
+//			if (el.getText().equalsIgnoreCase(name)) {
+//				break;
+//			}
+//			index++;
+//		}
+//		click(shipMethodPrice.get(index));
+//		sleep(2000);
+//	}
 
+	// Return back to address
 	public void returnToAdress() {
 		click(changeAddBtn);
 	}

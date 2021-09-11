@@ -9,6 +9,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openxmlformats.schemas.drawingml.x2006.chart.STLegendPos;
 
+import io.qameta.allure.Step;
+
 public class CartPage extends MenuPage {
 
 	@FindBy(css = ".sylius-cart-remove-button")
@@ -52,6 +54,7 @@ public class CartPage extends MenuPage {
 	}
 
 	// Remove product from cart
+	@Step("Remove Item: {0}")
 	public void removeItem(String name) {
 		int index = 0;
 		for (WebElement el : productsList) {
@@ -75,6 +78,7 @@ public class CartPage extends MenuPage {
 	}
 
 	// change the quantity of a product in the cart
+	@Step("Ass Quantity: {0}")
 	public void changeQuantity(String qcy) {
 		fillText(quantityElement, qcy);
 		click(updateBtnElement);
@@ -82,6 +86,7 @@ public class CartPage extends MenuPage {
 	}
 
 	// Apply coupon in the cart
+	@Step("Apply copoun: {0}")
 	public void applyCoupon(String cpn) {
 		fillText(couponElement, cpn);
 		click(applyCouponBtn);
@@ -151,7 +156,6 @@ public class CartPage extends MenuPage {
 		unit = unit.substring(1, size);
 		double unitPrice = Double.parseDouble(unit);
 		unitPrice = Precision.round(unitPrice, 2);
-//		System.out.println(unitPrice);
 		return unitPrice;
 	}
 
@@ -162,7 +166,6 @@ public class CartPage extends MenuPage {
 		unit = unit.substring(1, size);
 		double unitPrice = Double.parseDouble(unit);
 		unitPrice = Precision.round(unitPrice, 2);
-//		System.out.println(unitPrice);
 		return unitPrice;
 	}
 
@@ -173,7 +176,6 @@ public class CartPage extends MenuPage {
 		unit = unit.substring(1, size);
 		double unitPrice = Double.parseDouble(unit);
 		unitPrice = Precision.round(unitPrice, 2);
-//		System.out.println(unitPrice);
 		return unitPrice;
 	}
 

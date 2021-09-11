@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import io.qameta.allure.Step;
+
 public class PaymentPage extends MenuPage {
 
 	@FindBy(css = "#next-step")
@@ -20,6 +22,7 @@ public class PaymentPage extends MenuPage {
 	}
 
 	// Choose the pay method
+	@Step("choose Pay Method: {0}")
 	public void choosePayMethod(String payOption) {
 		for (WebElement el : payOptionList) {
 			if (el.getText().equalsIgnoreCase(payOption)) {

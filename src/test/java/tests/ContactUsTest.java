@@ -10,8 +10,8 @@ import pageObject.MainPage;
 
 public class ContactUsTest extends BaseTest {
 
-	MainPage mainPage;
-	ContactUsPage connect;
+	private MainPage mainPage;
+	private ContactUsPage connect;
 
 	@BeforeMethod
 	public void goToLoginPage() {
