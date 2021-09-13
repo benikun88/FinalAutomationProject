@@ -31,7 +31,6 @@ public class LoginTest extends BaseTest {
 		mainPage = new MainPage(driver);
 		mainPage.clicksignIn();
 		loginPage = new LoginPage(driver);
-
 	}
 
 	@Severity(SeverityLevel.BLOCKER)
@@ -45,7 +44,6 @@ public class LoginTest extends BaseTest {
 		assertEquals(actual, expectd);
 		mainPage = new MainPage(driver);
 		mainPage.LogOut();
-
 	}
 
 	@Severity(SeverityLevel.CRITICAL)
@@ -57,7 +55,6 @@ public class LoginTest extends BaseTest {
 		String actual = loginPage.getError();
 		String expectd = "Invalid credentials.";
 		assertEquals(actual, expectd);
-
 	}
 
 	@Severity(SeverityLevel.CRITICAL)
@@ -69,7 +66,6 @@ public class LoginTest extends BaseTest {
 		String actual = loginPage.getError();
 		String expectd = "Invalid credentials.";
 		assertEquals(actual, expectd);
-
 	}
 
 	@Severity(SeverityLevel.NORMAL)
@@ -104,7 +100,6 @@ public class LoginTest extends BaseTest {
 	public Object[][] getData() {
 		Object[][] myData = { { "@example.com", "sylius" }, { "gal", "123" }, { "", "" }, { "!", "===" }, };
 		return myData;
-
 	}
 
 }

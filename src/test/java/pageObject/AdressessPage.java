@@ -48,7 +48,6 @@ public class AdressessPage extends CheckOutPage {
 		sleep(2000);
 		click(nextBtn);
 		sleep(1000);
-
 	}
 
 	// fill address shipment in the order flow user not logged in
@@ -63,7 +62,6 @@ public class AdressessPage extends CheckOutPage {
 		setcity(city);
 		setpostcode(postcode);
 		click(nextBtn);
-
 	}
 
 	// fill Email filed

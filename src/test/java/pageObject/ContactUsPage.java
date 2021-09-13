@@ -34,7 +34,6 @@ public class ContactUsPage extends MenuPage {
 		fillText(emailElement, email);
 		fillText(messagFiledElement, msg);
 		click(sendBtn);
-//		sleep(2000);
 	}
 
 	// Validation

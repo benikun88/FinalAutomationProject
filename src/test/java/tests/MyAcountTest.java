@@ -33,7 +33,6 @@ public class MyAcountTest extends BaseTest {
 		mainPage.clicksignIn();
 		loginPage = new LoginPage(driver);
 		loginPage.login(username, password);
-
 	}
 
 	@Severity(SeverityLevel.NORMAL)
@@ -52,7 +51,6 @@ public class MyAcountTest extends BaseTest {
 		dashboard.changePass();
 		changePassword.changePass(newPassword, password, password);
 		mainPage.LogOut();
-
 	}
 
 	@Severity(SeverityLevel.NORMAL)

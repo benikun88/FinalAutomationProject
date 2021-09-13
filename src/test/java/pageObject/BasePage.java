@@ -21,7 +21,6 @@ public class BasePage {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 		wait = new WebDriverWait(driver, 20);
-
 	}
 
 	// Accept the alert pop up
@@ -89,7 +88,6 @@ public class BasePage {
 		// Change the style back after few miliseconds
 		js.executeScript("var tmpArguments = arguments;setTimeout(function () {tmpArguments[0].setAttribute('style', '"
 				+ originalStyle + "');},400);", element);
-
 	}
 
 	// Hover with the mouse over elements
@@ -114,19 +112,16 @@ public class BasePage {
 
 	// Wait for objects elements instead of sleep
 	public void explicitWaitVisibility(WebElement element) {
-//		WebDriverWait wait = new WebDriverWait(driver, 20);
 		wait.until(ExpectedConditions.visibilityOf(element));
 	}
 
 	// Wait for objects elements instead of sleep
 	public void explicitWaitClickable(WebElement element) {
-//		WebDriverWait wait = new WebDriverWait(driver, 20);
 		wait.until(ExpectedConditions.elementToBeClickable(element));
 	}
 
 	// Wait for objects elements instead of sleep
 	public void explicitWaitAllElements(List<WebElement> elements) {
-//		WebDriverWait wait = new WebDriverWait(driver, 20);
 		wait.until(ExpectedConditions.visibilityOfAllElements(elements));
 	}
 

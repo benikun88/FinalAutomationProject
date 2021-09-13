@@ -130,7 +130,6 @@ public class CartPage extends MenuPage {
 			if (el.getText().equalsIgnoreCase(name)) {
 				return true;
 			}
-
 		}
 		return false;
 	}
@@ -143,7 +142,6 @@ public class CartPage extends MenuPage {
 			if (el.getText().equalsIgnoreCase(name)) {
 				return true;
 			}
-
 		}
 		return false;
 	}

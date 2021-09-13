@@ -61,7 +61,5 @@ public class E2ETest extends BaseTest {
 		String actual = coplOrder.checkOrderSuccess();
 		String expectd = "You have successfully placed an order.";
 		assertEquals(actual, expectd);
-
 	}
-
 }

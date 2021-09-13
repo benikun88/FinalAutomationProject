@@ -5,6 +5,8 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 import org.apache.commons.math3.util.Precision;
+import org.aspectj.lang.annotation.After;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -28,6 +30,7 @@ public class CartTest extends BaseTest {
 	private String product1 = "Summer tunic";
 	private String product2 = "Basic winter hot cap";
 	private String coupon = "D8";
+	private CartPage cart;
 
 	@BeforeMethod
 	public void choooseProduct() {
@@ -48,8 +51,6 @@ public class CartTest extends BaseTest {
 		boolean actual = cart.checkItemExist(product1);
 		assertTrue(actual);
 		cart.removeItem(product1);
-		cart.goHomePage();
-
 	}
 
 	@Severity(SeverityLevel.CRITICAL)
@@ -57,14 +58,11 @@ public class CartTest extends BaseTest {
 	@Description("Add product to cart and check if exist in cart,after that clean cart and return to home page")
 	@Test(description = "Remove product from cart")
 	public void tc_16_removeFromCart() {
-
 		CartPage cart = new CartPage(driver);
 		cart.removeItem(product1);
 		String actual = cart.getcartMsg();
 		String expectd = "Item has been removed from cart";
 		assertEquals(actual, expectd);
-		cart.goHomePage();
-
 	}
 
 	@Severity(SeverityLevel.CRITICAL)
@@ -72,7 +70,6 @@ public class CartTest extends BaseTest {
 	@Description("Add product to cart clean cart and check it empty")
 	@Test(description = "Empty cart")
 	public void tc_17_emptyCart() {
-
 		product.goHomePage();
 		mainPage = new MainPage(driver);
 		mainPage.chooseProduct(product2);
@@ -83,8 +80,6 @@ public class CartTest extends BaseTest {
 		String actual = cart.getInfoCart();
 		String expectd = "Your cart is empty";
 		assertEquals(actual, expectd);
-		cart.goHomePage();
-
 	}
 
 	@Severity(SeverityLevel.CRITICAL)
@@ -98,8 +93,6 @@ public class CartTest extends BaseTest {
 		double expectd = cart.getUnitPrice() * 2;
 		assertEquals(actual, expectd);
 		cart.clearCart();
-		cart.goHomePage();
-
 	}
 
 	@Severity(SeverityLevel.MINOR)
@@ -115,7 +108,6 @@ public class CartTest extends BaseTest {
 		double actual = cart.getTotalpriceShip();
 		assertEquals(actual, expectd);
 		cart.clearCart();
-		cart.goHomePage();
 	}
 
 	@Severity(SeverityLevel.MINOR)
@@ -129,14 +121,12 @@ public class CartTest extends BaseTest {
 		String expectd = "Coupon code is invalid.";
 		assertEquals(actual, expectd);
 		cart.clearCart();
-		cart.goHomePage();
 	}
 
 	@Severity(SeverityLevel.NORMAL)
 	@Feature("cart update")
 	@Description("Add product to cart,change Quantity to 99 and check if there is out of stock alert")
 	@Test(description = "add to cart unavilale quantity-error check")
-
 	public void tc_21_updateOutOfStockToCart() {
 		CartPage cart = new CartPage(driver);
 		cart.changeQuantity("99");
@@ -144,14 +134,12 @@ public class CartTest extends BaseTest {
 		String expectd = "S Petite does not have sufficient stock.";
 		assertEquals(actual, expectd);
 		cart.clearCart();
-		cart.goHomePage();
 	}
 
 	@Severity(SeverityLevel.NORMAL)
 	@Feature("cart update")
 	@Description("Add product to cart with Quantity of 99 and check if there is out of stock alert ")
 	@Test(description = "add to cart unavilale quantity-total price")
-
 	public void tc_22_updateOutOfStockToCart() {
 		CartPage cart = new CartPage(driver);
 		double expectd = cart.getTotalprice();
@@ -159,6 +147,11 @@ public class CartTest extends BaseTest {
 		double actual = cart.getTotalprice();
 		assertEquals(actual, expectd);
 		cart.clearCart();
+	}
+
+	@AfterMethod
+	public void clearCartReturnHome() {
+		cart = new CartPage(driver);
 		cart.goHomePage();
 	}
 

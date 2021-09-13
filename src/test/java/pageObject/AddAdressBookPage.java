@@ -41,7 +41,6 @@ public class AddAdressBookPage extends MyAcountPage {
 		setcity(city);
 		setpostcode(postcode);
 		click(addBtn);
-
 	}
 
 	// fill first name filed
@@ -73,5 +72,4 @@ public class AddAdressBookPage extends MyAcountPage {
 	public void setpostcode(String postcode) {
 		fillText(postcodeElement, postcode);
 	}
-
 }

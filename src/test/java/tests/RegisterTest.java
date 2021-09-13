@@ -32,7 +32,6 @@ public class RegisterTest extends BaseTest {
 		String actual = register.getGeneralMsg();
 		String expected = "Thank you for registering, check your email to verify your account.";
 		assertEquals(actual, expected);
-
 	}
 
 	@Severity(SeverityLevel.BLOCKER)
@@ -48,6 +47,5 @@ public class RegisterTest extends BaseTest {
 		String actual = register.getemailAlert();
 		String expected = "This email is already used.";
 		assertEquals(actual, expected);
-
 	}
 }
