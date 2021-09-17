@@ -17,6 +17,7 @@ import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Step;
 import pageObject.LoginPage;
 import pageObject.MainPage;
+import utils.DataProviders;
 
 @Epic("Login and Sign up")
 public class LoginTest extends BaseTest {
@@ -40,8 +41,8 @@ public class LoginTest extends BaseTest {
 	public void tc_05_valid() {
 		loginPage.login(user, password);
 		String actual = mainPage.getUserName();
-		String expectd = "Hello";
-		assertEquals(actual, expectd);
+		String expected = "Hello";
+		assertEquals(actual, expected);
 		mainPage = new MainPage(driver);
 		mainPage.LogOut();
 	}
@@ -49,12 +50,12 @@ public class LoginTest extends BaseTest {
 	@Severity(SeverityLevel.CRITICAL)
 	@Feature("Verify the login functionality")
 	@Description("Login with invalid data")
-	@Test(dataProvider = "getData", description = "Login with invalid user name")
+	@Test(dataProviderClass = DataProviders.class, dataProvider = "loginData", description = "Login with invalid user name")
 	public void tc_06_inValidUser(String invalidUser, String invalidPassword) {
 		loginPage.login(invalidUser, invalidPassword);
 		String actual = loginPage.getError();
-		String expectd = "Invalid credentials.";
-		assertEquals(actual, expectd);
+		String expected = "Invalid credentials.";
+		assertEquals(actual, expected);
 	}
 
 	@Severity(SeverityLevel.CRITICAL)
@@ -64,8 +65,8 @@ public class LoginTest extends BaseTest {
 	public void tc_07_inValidPass() {
 		loginPage.login("fashion@example.com", "ylius");
 		String actual = loginPage.getError();
-		String expectd = "Invalid credentials.";
-		assertEquals(actual, expectd);
+		String expected = "Invalid credentials.";
+		assertEquals(actual, expected);
 	}
 
 	@Severity(SeverityLevel.NORMAL)
@@ -77,8 +78,8 @@ public class LoginTest extends BaseTest {
 		driver.navigate().refresh();
 		loginPage.sleep(2000);
 		String actual = mainPage.getUserName();
-		String expectd = "Hello";
-		assertEquals(actual, expectd);
+		String expected = "Hello";
+		assertEquals(actual, expected);
 		mainPage = new MainPage(driver);
 		mainPage.LogOut();
 	}
@@ -92,14 +93,9 @@ public class LoginTest extends BaseTest {
 		mainPage = new MainPage(driver);
 		mainPage.LogOut();
 		String actual = mainPage.checkLogOut();
-		String expectd = "Login";
-		assertEquals(actual, expectd);
+		String expected = "Login";
+		assertEquals(actual, expected);
 	}
 
-	@DataProvider
-	public Object[][] getData() {
-		Object[][] myData = { { "@example.com", "sylius" }, { "gal", "123" }, { "", "" }, { "!", "===" }, };
-		return myData;
-	}
 
 }

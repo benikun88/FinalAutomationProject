@@ -126,6 +126,7 @@ public class CartPage extends MenuPage {
 
 	// Check if item exist in cart
 	public boolean checkItemExist(String name) {
+		sleep(2000);
 		for (WebElement el : productsList) {
 			if (el.getText().equalsIgnoreCase(name)) {
 				return true;

@@ -77,6 +77,7 @@ public class MenuPage extends BasePage {
 
 	// Go to home page
 	public void goHomePage() {
+		waitForVisibleOfElement(homePageBtn);
 		click(homePageBtn);
 	}
 

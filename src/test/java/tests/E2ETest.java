@@ -59,7 +59,7 @@ public class E2ETest extends BaseTest {
 		CompleteOrderPage coplOrder = new CompleteOrderPage(driver);
 		coplOrder.placeOrder();
 		String actual = coplOrder.checkOrderSuccess();
-		String expectd = "You have successfully placed an order.";
-		assertEquals(actual, expectd);
+		String expected = "You have successfully placed an order.";
+		assertEquals(actual, expected);
 	}
 }

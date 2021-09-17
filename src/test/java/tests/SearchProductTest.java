@@ -30,8 +30,8 @@ public class SearchProductTest extends BaseTest {
 		ProductsPage products = new ProductsPage(driver);
 		products.search(product1);
 		String actual = products.checkItmeName();
-		String expectd = product1;
-		assertEquals(actual, expectd);
+		String expected = product1;
+		assertEquals(actual, expected);
 		mainPage.goHomePage();
 	}
 
@@ -45,8 +45,8 @@ public class SearchProductTest extends BaseTest {
 		ProductsPage products = new ProductsPage(driver);
 		products.search(product2);
 		String actual = products.getSearchInfoMsg();
-		String expectd = "There are no results to display";
-		assertEquals(actual, expectd);
+		String expected = "There are no results to display";
+		assertEquals(actual, expected);
 	}
 
 }
