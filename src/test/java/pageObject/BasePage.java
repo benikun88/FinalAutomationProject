@@ -34,7 +34,7 @@ public class BasePage {
 		return URL;
 	}
 
-	// Fill the text in the text filed
+	// Fill the text in the text field
 	public void fillText(WebElement el, String text) {
 		highlightElement(el, "yellow");
 		el.clear();
