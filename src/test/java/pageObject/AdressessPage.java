@@ -64,38 +64,38 @@ public class AdressessPage extends CheckOutPage {
 		click(nextBtn);
 	}
 
-	// fill Email filed
+	// fill Email field
 	public void setEmail(String email) {
 
 		fillText(emailElement, email);
 	}
 
-	// fill first name filed
+	// fill first name field
 	public void setFirstName(String firstName) {
 		fillText(firsNameElement, firstName);
 	}
 
-	// fill last name filed
+	// fill last name field
 	public void setLastName(String lastName) {
 		fillText(lastNameElement, lastName);
 	}
 
-	// fill street address filed
+	// fill street address field
 	public void setStreetAddress(String streetAddress) {
 		fillText(streetAddressElement, streetAddress);
 	}
 
-	// fill country filed
+	// fill country field
 	public void setCountry(String country) {
 		SelectByText(countryElement, country);
 	}
 
-	// fill city filed
+	// fill city field
 	public void setCity(String city) {
 		fillText(cityElement, city);
 	}
 
-	// fill post code filed
+	// fill post code field
 	public void setPostCode(String postcode) {
 		fillText(postcodeElement, postcode);
 	}

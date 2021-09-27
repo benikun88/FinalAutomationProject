@@ -34,7 +34,7 @@ public class CompleteOrderPage extends BasePage {
 	public CompleteOrderPage(WebDriver driver) {
 		super(driver);
 	}
-
+	//	vIEW the order 
 	public void viewOrder() {
 		click(viewOrderBtn);
 	}
