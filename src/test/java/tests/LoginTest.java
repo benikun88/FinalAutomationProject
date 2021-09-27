@@ -30,7 +30,7 @@ public class LoginTest extends BaseTest {
 	@BeforeMethod
 	public void goToLoginPage() {
 		mainPage = new MainPage(driver);
-		mainPage.clicksignIn();
+		mainPage.clickSignIn();
 		loginPage = new LoginPage(driver);
 	}
 

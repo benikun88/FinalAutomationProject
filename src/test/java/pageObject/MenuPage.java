@@ -60,7 +60,7 @@ public class MenuPage extends BasePage {
 	}
 
 	// Click Login button
-	public void clicksignIn() {
+	public void clickSignIn() {
 		click(loginBtn);
 	}
 

@@ -30,7 +30,7 @@ public class MyAcountTest extends BaseTest {
 	@BeforeMethod
 	public void goToLoginPage() {
 		mainPage = new MainPage(driver);
-		mainPage.clicksignIn();
+		mainPage.clickSignIn();
 		loginPage = new LoginPage(driver);
 		loginPage.login(username, password);
 	}
@@ -57,7 +57,7 @@ public class MyAcountTest extends BaseTest {
 	@Feature("password change")
 	@Description("change password with invalid data")
 	@Test(description = "check change password - invalid")
-	public void tc_29_changePassInvalid() {
+	public void tc_30_changePassInvalid() {
 		mainPage.clickMyacount();
 		DashboardPage dashboard = new DashboardPage(driver);
 		dashboard.changePass();

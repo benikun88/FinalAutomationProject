@@ -57,7 +57,7 @@ public class ProductPage extends MenuPage {
 	}
 
 	// Add cap to cart
-	public void addcap(String Quantity) {
+	public void addCap(String Quantity) {
 		changeQuantity(Quantity);
 		addToCart();
 	}

@@ -35,11 +35,11 @@ public class AddAdressBookPage extends MyAcountPage {
 	public void fillAddress(String firstName, String lastName, String streetAddress, String country, String city,
 			String postcode) {
 		setFirstName(firstName);
-		setlastName(lastName);
-		setstreetAddress(streetAddress);
-		setcountry(country);
-		setcity(city);
-		setpostcode(postcode);
+		setLastName(lastName);
+		setStreetAddress(streetAddress);
+		setCountry(country);
+		setCity(city);
+		setPostCode(postcode);
 		click(addBtn);
 	}
 
@@ -49,27 +49,27 @@ public class AddAdressBookPage extends MyAcountPage {
 	}
 
 	// fill last name filed
-	public void setlastName(String lastName) {
+	public void setLastName(String lastName) {
 		fillText(lastNameElement, lastName);
 	}
 
 	// fill street address filed
-	public void setstreetAddress(String streetAddress) {
+	public void setStreetAddress(String streetAddress) {
 		fillText(streetAddressElement, streetAddress);
 	}
 
 	// fill country filed
-	public void setcountry(String country) {
+	public void setCountry(String country) {
 		SelectByText(countryElement, country);
 	}
 
 	// fill city filed
-	public void setcity(String city) {
+	public void setCity(String city) {
 		fillText(cityElement, city);
 	}
 
 	// fill post code filed
-	public void setpostcode(String postcode) {
+	public void setPostCode(String postcode) {
 		fillText(postcodeElement, postcode);
 	}
 }

@@ -40,7 +40,7 @@ public class E2ETest extends BaseTest {
 	@Test(description = "E2E Test")
 	public void tc_15_E2E() {
 		mainPage = new MainPage(driver);
-		mainPage.clicksignIn();
+		mainPage.clickSignIn();
 		loginPage = new LoginPage(driver);
 		loginPage.login(user, password);
 		mainPage.clickDressCategory();

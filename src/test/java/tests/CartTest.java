@@ -60,7 +60,7 @@ public class CartTest extends BaseTest {
 	public void tc_16_removeFromCart() {
 		CartPage cart = new CartPage(driver);
 		cart.removeItem(product1);
-		String actual = cart.getcartMsg();
+		String actual = cart.getCartMsg();
 		String expected = "Item has been removed from cart";
 		assertEquals(actual, expected);
 	}
@@ -74,7 +74,7 @@ public class CartTest extends BaseTest {
 		mainPage = new MainPage(driver);
 		mainPage.chooseProduct(product2);
 		product = new ProductPage(driver);
-		product.addcap("1");
+		product.addCap("1");
 		CartPage cart = new CartPage(driver);
 		cart.clearCart();
 		String actual = cart.getInfoCart();
@@ -130,7 +130,7 @@ public class CartTest extends BaseTest {
 	public void tc_21_updateOutOfStockToCart() {
 		CartPage cart = new CartPage(driver);
 		cart.changeQuantity("99");
-		String actual = cart.getstockErr();
+		String actual = cart.getStockErr();
 		String expected = "S Petite does not have sufficient stock.";
 		assertEquals(actual, expected);
 		cart.clearCart();

@@ -104,12 +104,12 @@ public class CartPage extends MenuPage {
 	}
 
 	// Get cart status in add or remove item
-	public String getcartMsg() {
+	public String getCartMsg() {
 		return getT(CartStatusMsg);
 	}
 
 	// Get out of stock indication
-	public String getstockErr() {
+	public String getStockErr() {
 		return getT(stockMsg);
 	}
 
