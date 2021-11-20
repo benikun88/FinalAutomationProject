@@ -52,6 +52,7 @@ public class BasePage {
 	public String getT(WebElement el) {
 		highlightElement(el, "yellow");
 		return el.getText();
+		
 	}
 
 	// Create the system waiting before continue to next execution
@@ -159,5 +160,9 @@ public class BasePage {
 	public boolean isExist(WebElement el) {
 		return el.isDisplayed();
 	}
+	 public void uploadFile(WebElement inputField,WebElement uploadButton, String absolutePathOfFile){
+		 inputField .sendKeys(absolutePathOfFile);
+	        click(uploadButton);
+	 }
 
 }
