@@ -26,8 +26,8 @@ public class BaseTest {
 
 	@BeforeClass
 	public void setup(ITestContext testContext) throws InterruptedException {
-		WebDriverManager.firefoxdriver().setup();
-		driver = new FirefoxDriver();
+		WebDriverManager.chromedriver().setup();
+		driver = new ChromeDriver();
 		testContext.setAttribute("WebDriver", this.driver);
 		driver.manage().window().maximize();
 		driver.get(Utl.readProperty("url"));
